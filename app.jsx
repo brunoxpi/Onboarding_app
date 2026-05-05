@@ -485,7 +485,7 @@ function InteractiveInput({ active, expected, onSubmit }) {
           placeholder={active ? (expected ? `Digite "${expected}"…` : 'iMessage') : 'Mensagem'}
           style={{
             flex: 1, border: 'none', outline: 'none',
-            fontSize: 15, fontFamily: '-apple-system, system-ui',
+            fontSize: 16, fontFamily: '-apple-system, system-ui',
             color: '#111B21', background: 'transparent', minWidth: 0,
             cursor: active ? 'text' : 'not-allowed',
             padding: '4px 0',
