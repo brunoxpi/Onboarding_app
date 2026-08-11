@@ -1,104 +1,1050 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Onboarding WhatsApp · ANOVA</title>
-<link rel="stylesheet" href="anova/colors_and_type.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel de Projetos · Interno · ANOVA</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  html, body { height: 100%; background: #EFE7DE; }
-  body {
-    font-family: var(--font);
-    color: #111B21;
-    min-height: 100vh;
-    overflow: hidden;
-    margin: 0;
-  }
-  #root { width: 100%; height: 100vh; }
+:root{
+  --onyx:#0A0A0A; --surface-dark:#3A3A3A; --charcoal:#4A4A4A; --stone:#767676;
+  --dust:#BABABA; --gray-hover:#EBEBEB; --gray-light:#F4F4F4; --white:#FFFFFF;
+  --border:rgba(0,0,0,.08); --border-hi:rgba(0,0,0,.14);
+  --font:'DM Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-pill:99px;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --red:#9A2A1A; --red-bg:#FCF3EF; --red-bd:rgba(155,42,26,.25);
+  --amber:#7A5A00; --amber-bg:#FFF6DE; --amber-bd:rgba(122,90,0,.28);
+  --green:#0D5C2E; --green-bg:#EDF7F0; --green-bd:rgba(13,92,46,.22);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--onyx);font-family:var(--font);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--onyx);color:var(--white)}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:14px;color:var(--onyx)}
+:focus-visible{outline:2px solid var(--onyx);outline-offset:2px}
+a{color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 var(--s6)}
+@media(max-width:680px){.container{padding:0 var(--s4)}}
 
-  /* Mobile-first: chat fills the screen */
-  .stage {
-    width: 100vw; height: 100vh;
-    display: flex; flex-direction: column;
-    background: #EFE7DE;
-    position: relative;
-  }
+/* ── HEADER ── */
+.header{background:var(--onyx);color:var(--white);padding:var(--s7) 0 var(--s6);position:relative;overflow:hidden}
+.header::before,.header::after{content:"";position:absolute;width:18px;height:18px;border:1px solid rgba(255,255,255,.18)}
+.header::before{top:var(--s5);left:var(--s5);border-right:none;border-bottom:none}
+.header::after{top:var(--s5);right:var(--s5);border-left:none;border-bottom:none}
+.header-ghost{position:absolute;right:-16px;bottom:-38px;font-family:var(--mono);font-size:150px;font-weight:700;color:rgba(255,255,255,.035);letter-spacing:-.04em;pointer-events:none;line-height:1}
+.header-top{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s6)}
+.logo-sq{height:46px;width:auto;flex-shrink:0;display:block}
+.logo-foot{height:22px;width:auto;display:block;opacity:.85}
+.header-eyebrow{font-family:var(--mono);font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--dust);margin-left:auto;text-align:right}
+.header h1{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-bottom:var(--s3)}
+.header .sub{color:var(--dust);max-width:70ch;font-size:14px}
+.header-meta{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s5)}
+.hm-pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(255,255,255,.22);border-radius:var(--r-pill);color:rgba(255,255,255,.85)}
+.hm-pill.save-ok{border-color:rgba(255,255,255,.45)}
 
-  /* Desktop / large viewports: center the chat in a mobile-sized column with neutral surroundings */
-  @media (min-width: 760px) and (min-height: 720px) {
-    body { background: #d8cfc2; }
-    .stage {
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      box-sizing: border-box;
-    }
-    .device-shell {
-      width: 420px;
-      height: min(820px, calc(100vh - 48px));
-      background: #EFE7DE;
-      box-shadow: 0 12px 40px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.06);
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      flex-shrink: 0;
-    }
-    .device-screen { flex: 1; display: flex; flex-direction: column; min-height: 0; }
-  }
-  @media (max-width: 759px), (max-height: 719px) {
-    .device-shell { display: contents; }
-    .device-screen { display: contents; }
-  }
+/* ── STATS ── */
+.stats{border-bottom:1px solid var(--border)}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr)}
+@media(min-width:1100px){.stats-grid{grid-template-columns:repeat(10,1fr)}}
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:var(--s5) var(--s4);border-right:1px solid var(--border);cursor:default}
+.stat:last-child{border-right:none}
+.stat.clickable{cursor:pointer;transition:background .18s var(--ease)}
+.stat.clickable:hover{background:var(--gray-light)}
+.stat .n{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--stone);margin-top:6px}
+.stat.warn .n{color:var(--red)}
+.stat.today .n{color:var(--amber)}
 
-  /* Floating reset chip — small, top-right, doesn't interfere with chat */
-  .reset-btn {
-    position: fixed; top: 14px; right: 14px; z-index: 100;
-    appearance: none; border: 0.5px solid rgba(17,27,33,.18);
-    background: rgba(255,255,255,.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #54656F;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9.5px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    padding: 7px 11px;
-    border-radius: 999px;
-    cursor: pointer;
-    display: inline-flex; align-items: center; gap: 5px;
-    transition: all 160ms ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
-  }
-  .reset-btn:hover { background: #fff; color: #008069; border-color: rgba(0,128,105,.30); }
-  .reset-btn svg { width: 11px; height: 11px; }
+/* ── TOOLBAR ── */
+.toolbar{padding:var(--s5) 0 var(--s4);display:flex;flex-direction:column;gap:var(--s3)}
+.tb-row{display:flex;gap:var(--s2);flex-wrap:wrap;align-items:center}
+.pill{font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:7px 14px;border:1px solid var(--border-hi);border-radius:var(--r-pill);background:var(--white);transition:all .18s var(--ease);white-space:nowrap}
+.pill:hover{background:var(--gray-light)}
+.pill.on{background:var(--onyx);color:var(--white);border-color:var(--onyx)}
+.pill .pct{opacity:.55;margin-left:6px}
+.tab{font-size:13px;font-weight:600;padding:7px 13px;border-radius:var(--r-sm);color:var(--stone);transition:all .18s var(--ease)}
+.tab:hover{background:var(--gray-light);color:var(--onyx)}
+.tab.on{background:var(--gray-light);color:var(--onyx);box-shadow:inset 0 0 0 1px var(--border-hi)}
+.tab.alert{color:var(--red)}
+.tab.alert.on{background:var(--red-bg);box-shadow:inset 0 0 0 1px var(--red-bd)}
+.sel,.inp{border:1px solid var(--border-hi);border-radius:var(--r-sm);padding:8px 10px;background:var(--white)}
+.inp::placeholder{color:var(--dust)}
+.spacer{flex:1}
+.btn{font-size:13px;font-weight:600;padding:9px 16px;border-radius:var(--r-sm);transition:all .18s var(--ease);white-space:nowrap}
+.btn-dark{background:var(--onyx);color:var(--white)}
+.btn-dark:hover{background:var(--surface-dark)}
+.btn-ghost{border:1px solid var(--border-hi)}
+.btn-ghost:hover{background:var(--gray-light)}
+.btn-sm{font-size:12px;padding:6px 11px}
 
-  .loading {
-    display: flex; align-items: center; justify-content: center;
-    height: 100vh;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: #54656F;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-  }
+/* ── PROJECT SECTIONS ── */
+.projects{padding-bottom:var(--s7)}
+.proj{border:1px solid var(--border-hi);border-radius:var(--r-lg);margin-bottom:var(--s4);overflow:hidden;background:var(--white)}
+.proj-head{display:flex;align-items:center;gap:var(--s3);padding:var(--s4) var(--s5);cursor:pointer;user-select:none;transition:background .18s var(--ease)}
+.proj-head:hover{background:var(--gray-light)}
+.proj-key{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--stone);border:1px solid var(--border-hi);border-radius:var(--r-sm);padding:3px 8px;white-space:nowrap}
+.proj-name{font-weight:700;font-size:16px;letter-spacing:-.01em}
+.proj-meta{margin-left:auto;display:flex;align-items:center;gap:var(--s4);flex-shrink:0}
+.proj-counts{font-family:var(--mono);font-size:11px;color:var(--stone);white-space:nowrap}
+.proj-bar{width:130px;height:5px;background:var(--gray-light);border-radius:var(--r-pill);overflow:hidden}
+.proj-bar i{display:block;height:100%;background:var(--onyx);border-radius:var(--r-pill);transition:width .5s var(--ease)}
+.proj-pct{font-family:var(--mono);font-size:12px;font-weight:600;min-width:38px;text-align:right}
+.caret{font-family:var(--mono);color:var(--stone);transition:transform .25s var(--ease)}
+.proj.open .caret{transform:rotate(90deg)}
+.proj-body{display:none;border-top:1px solid var(--border)}
+.proj.open .proj-body{display:block}
+@media(max-width:760px){.proj-bar{display:none}.proj-counts{display:none}}
+
+/* ── TASK ROW ── */
+.trow{border-bottom:1px solid var(--border)}
+.trow:last-child{border-bottom:none}
+.trow-main{display:flex;align-items:center;gap:var(--s3);padding:var(--s3) var(--s5);flex-wrap:wrap}
+.trow.overdue .trow-main{background:var(--red-bg)}
+.trow.today-due .trow-main{background:var(--amber-bg)}
+.st-sel{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;border:1px solid var(--border-hi);border-radius:var(--r-pill);padding:4px 8px;background:var(--white);appearance:none;-webkit-appearance:none;cursor:pointer}
+.st-sel.s-done{background:var(--green-bg);border-color:var(--green-bd);color:var(--green)}
+.st-sel.s-prog{background:var(--gray-light)}
+.jkey{font-family:var(--mono);font-size:10.5px;color:var(--stone);text-decoration:none;border-bottom:1px dashed var(--dust);white-space:nowrap}
+.jkey:hover{color:var(--onyx);border-bottom-color:var(--onyx)}
+.ttitle{font-size:14px;font-weight:500;flex:1;min-width:200px;cursor:pointer}
+.ttitle:hover{text-decoration:underline;text-underline-offset:3px}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.04em;padding:3px 9px;border-radius:var(--r-pill);border:1px solid var(--border-hi);color:var(--charcoal);white-space:nowrap}
+.chip.bug{color:var(--red);border-color:var(--red-bd);background:var(--red-bg)}
+.chip.due-ok{color:var(--charcoal)}
+.chip.due-late{color:var(--red);border-color:var(--red-bd);background:var(--white);font-weight:600}
+.chip.due-today{color:var(--amber);border-color:var(--amber-bd);background:var(--white);font-weight:600}
+.chip.due-none{color:var(--stone);border-style:dashed;cursor:pointer}
+.chip.due-none:hover{color:var(--onyx);border-color:var(--onyx)}
+.chip.reprog{color:var(--amber);border-color:var(--amber-bd)}
+.chip.slabel{color:var(--stone);border-style:dotted}
+.t-actions{display:flex;gap:6px;flex-shrink:0}
+.ic-btn{font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:var(--r-sm);border:1px solid var(--border-hi);transition:all .15s var(--ease);white-space:nowrap}
+.ic-btn:hover{background:var(--gray-light)}
+.ic-btn.close-day{background:var(--onyx);color:var(--white);border-color:var(--onyx)}
+.ic-btn.close-day:hover{background:var(--surface-dark)}
+.trow-detail{display:none;padding:0 var(--s5) var(--s4) var(--s5)}
+.trow.exp .trow-detail{display:block}
+.d-block{border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s3) var(--s4);margin-top:var(--s2);font-size:13px}
+.d-block h4{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+.sub-line{display:flex;align-items:center;gap:8px;padding:4px 0;color:var(--charcoal)}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot.done{background:var(--green)} .dot.in_progress{background:var(--amber)} .dot.pending{background:var(--dust)}
+.cl-line{padding:7px 0;border-bottom:1px dashed var(--border);color:var(--charcoal)}
+.cl-line:last-child{border-bottom:none}
+.cl-line b{font-weight:600}
+.cl-line .neg{color:var(--red);font-weight:600}
+.cl-line .pos{color:var(--green);font-weight:600}
+.empty-proj{padding:var(--s4) var(--s5);color:var(--stone);font-size:13.5px}
+.add-inline{padding:var(--s3) var(--s5)}
+
+/* ── MODAL ── */
+.overlay{position:fixed;inset:0;background:rgba(10,10,10,.45);display:none;align-items:flex-start;justify-content:center;padding:8vh var(--s4) var(--s4);z-index:50;overflow-y:auto}
+.overlay.show{display:flex}
+.modal{background:var(--white);border-radius:var(--r-lg);max-width:520px;width:100%;padding:var(--s5);box-shadow:0 24px 64px rgba(0,0,0,.25)}
+.modal h3{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:4px}
+.modal .m-sub{font-size:13px;color:var(--stone);margin-bottom:var(--s4)}
+.f-group{margin-bottom:var(--s3)}
+.f-group label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.f-group .req{color:var(--red)}
+.f-group input[type=text],.f-group input[type=date],.f-group select,.f-group textarea{width:100%;border:1px solid var(--border-hi);border-radius:var(--r-sm);padding:9px 11px;background:var(--white)}
+.f-group textarea{min-height:74px;resize:vertical}
+.f-err{color:var(--red);font-size:12px;margin-top:5px;display:none}
+.m-actions{display:flex;gap:var(--s2);justify-content:flex-end;margin-top:var(--s4);flex-wrap:wrap}
+.choice-row{display:flex;gap:var(--s2);margin:var(--s4) 0}
+.choice{flex:1;border:1px solid var(--border-hi);border-radius:var(--r-md);padding:var(--s4);text-align:center;font-weight:700;font-size:14.5px;transition:all .15s var(--ease)}
+.choice:hover{background:var(--gray-light)}
+.choice.pos-c{color:var(--green)} .choice.neg-c{color:var(--red)}
+.imp-row{display:flex;align-items:center;gap:8px;margin-bottom:var(--s2)}
+.ritual-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--amber-bg);border:1px solid var(--amber-bd);color:var(--amber);border-radius:var(--r-pill);padding:4px 11px;margin-bottom:var(--s3)}
+
+
+/* ── CADEIA DE COBRANÇA ── */
+.chain{border-left:2px solid var(--onyx);padding-left:14px;margin-top:6px}
+.chain-ev{padding:8px 0;border-bottom:1px dashed var(--border);font-size:12.5px}
+.chain-ev:last-child{border-bottom:none}
+.chain-ev .when{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--stone);text-transform:uppercase}
+.chain-ev .said{color:var(--charcoal);margin-top:2px}
+.chain-ev .said b{font-weight:600;color:var(--onyx)}
+.tag-r{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:var(--r-pill);border:1px solid var(--border-hi);margin-left:6px}
+.tag-r.sim{color:var(--green);border-color:var(--green-bd);background:var(--green-bg)}
+.tag-r.nao{color:var(--red);border-color:var(--red-bd);background:var(--red-bg)}
+.chip.promessa{color:var(--charcoal);border-color:var(--border-hi)}
+.chip.promessa.vencida{color:var(--red);border-color:var(--red);font-weight:700;background:var(--red-bg)}
+.chip.semcob{color:var(--red);border-color:var(--red-bd);background:var(--red-bg);font-weight:600}
+
+/* ── PASSOS ── */
+.step{display:flex;align-items:center;gap:9px;padding:7px 2px;border-bottom:1px dashed var(--border);font-size:13px;cursor:pointer;transition:background .15s var(--ease)}
+.step:last-child{border-bottom:none}
+.step:hover{background:var(--gray-light)}
+.step .bx{width:15px;height:15px;border:1.5px solid var(--dust);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--white);line-height:1}
+.step.s-done .bx{background:var(--onyx);border-color:var(--onyx)}
+.step.s-prog .bx{border-color:var(--onyx);background:linear-gradient(135deg,var(--onyx) 50%,transparent 50%)}
+.step.s-done .stitle{text-decoration:line-through;color:var(--stone)}
+.stitle{flex:1;min-width:120px}
+.step .sown{font-family:var(--mono);font-size:10px;color:var(--stone);white-space:nowrap}
+.step .sdue{font-family:var(--mono);font-size:10px;color:var(--charcoal);border:1px solid var(--border-hi);border-radius:var(--r-pill);padding:2px 7px;white-space:nowrap}
+.step.late .sdue{color:var(--red);border-color:var(--red-bd);font-weight:600}
+.chip.steps{font-family:var(--mono);cursor:pointer}
+.chip.steps.full{color:var(--green);border-color:var(--green-bd);background:var(--green-bg)}
+
+/* ── PRIORIDADE / AGUARDANDO ── */
+.star{font-size:15px;line-height:1;color:var(--dust);padding:2px 4px;border-radius:var(--r-sm);transition:color .15s var(--ease)}
+.star:hover{color:var(--onyx)}
+.star.on{color:var(--onyx)}
+.trow.prio .trow-main{box-shadow:inset 3px 0 0 var(--onyx)}
+.chip.wait-ext{color:var(--onyx);border:1px dashed var(--onyx);background:var(--white);font-weight:600}
+.cob-line{padding:4px 0;border-bottom:1px dashed var(--border);color:var(--charcoal);font-family:var(--mono);font-size:11px}
+.cob-line:last-child{border-bottom:none}
+
+/* ── SEMANA / COO ── */
+.view-pill{font-size:13px;font-weight:700;padding:8px 16px;border:1px solid var(--border-hi);border-radius:var(--r-pill);transition:all .18s var(--ease)}
+.view-pill.on{background:var(--onyx);color:var(--white);border-color:var(--onyx)}
+.chip.wk{color:var(--onyx);border-color:var(--onyx);font-weight:600;cursor:pointer}
+.chip.wk-add{color:var(--stone);border-style:dashed;cursor:pointer}
+.chip.wk-add:hover{color:var(--onyx);border-color:var(--onyx)}
+.chip.ok-w{color:var(--green);border-color:var(--green-bd);background:var(--green-bg);font-weight:600}
+.chip.bad-w{color:var(--red);border-color:var(--red-bd);background:var(--red-bg);font-weight:600}
+.chip.wait-w{color:var(--amber);border-color:var(--amber-bd);background:var(--amber-bg);font-weight:600}
+.chip.impd{color:var(--red);border-color:var(--red);background:var(--white);font-weight:700}
+.placar{display:flex;gap:var(--s4);align-items:baseline;flex-wrap:wrap;border:1px solid var(--border-hi);border-radius:var(--r-lg);padding:var(--s4) var(--s5);margin-bottom:var(--s4)}
+.placar .big{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:-.03em}
+.placar .pl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--stone)}
+.placar .sep{color:var(--dust)}
+.person{border:1px solid var(--border-hi);border-radius:var(--r-lg);margin-bottom:var(--s4);overflow:hidden;background:var(--white)}
+.person-head{display:flex;align-items:center;gap:var(--s3);padding:var(--s3) var(--s5);background:var(--gray-light);border-bottom:1px solid var(--border)}
+.person-name{font-weight:700;font-size:15px}
+.person-score{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--charcoal);white-space:nowrap}
+.banner{display:flex;align-items:center;gap:var(--s3);background:var(--amber-bg);border:1px solid var(--amber-bd);color:var(--amber);border-radius:var(--r-md);padding:var(--s3) var(--s4);margin-bottom:var(--s4);font-size:13.5px;font-weight:600;flex-wrap:wrap}
+.week-empty{border:1px dashed var(--border-hi);border-radius:var(--r-lg);padding:var(--s6);text-align:center;color:var(--stone)}
+.plan-item{display:flex;align-items:center;gap:8px;padding:7px 4px;border-bottom:1px dashed var(--border);font-size:13.5px;cursor:pointer}
+.plan-item:hover{background:var(--gray-light)}
+.plan-item .jk{font-family:var(--mono);font-size:10.5px;color:var(--stone);white-space:nowrap}
+.plan-group{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin:12px 0 4px}
+#plan-list{max-height:46vh;overflow-y:auto;border:1px solid var(--border);border-radius:var(--r-md);padding:4px 10px;margin-top:var(--s2)}
+.modal.wide{max-width:640px}
+
+/* ── FOOTER ── */
+.footer{background:var(--onyx);color:var(--dust);padding:var(--s5) 0;margin-top:var(--s6)}
+.footer .container{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-  <div id="root"><div class="loading">Carregando · ANOVA</div></div>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<header class="header">
+  <div class="header-ghost">OPS</div>
+  <div class="container">
+    <div class="header-top">
+      <img class="logo-sq" src="data:image/png;base64,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" alt="ANOVA">
+      <div class="header-eyebrow">Uso interno · Operações</div>
+    </div>
+    <h1>Painel de Projetos</h1>
+    <p class="sub">Gestão ponta a ponta das tarefas de todos os projetos: status, gestor, data de conclusão obrigatória e fechamento com motivo, nova data e impeditivo. Segunda define os outputs da semana; sexta bate o placar, pessoa por pessoa.</p>
+    <div class="header-meta">
+      <span class="hm-pill">Snapshot Jira · 20/jul/2026</span>
+      <span class="hm-pill" id="save-badge">Carregando…</span>
+    </div>
+  </div>
+</header>
 
-  <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="ios-frame.jsx"></script>
-  <script type="text/babel" src="mocks.jsx"></script>
-  <script type="text/babel" src="whatsapp.jsx"></script>
-  <script type="text/babel" src="signup.jsx"></script>
-  <script type="text/babel" src="identity.jsx"></script>
-  <script type="text/babel" src="extras.jsx"></script>
-  <script type="text/babel" src="chatlist.jsx"></script>
-  <script type="text/babel" src="conversation.jsx"></script>
-  <script type="text/babel" src="app.jsx"></script>
+<section class="stats"><div class="container"><div class="stats-grid" id="stats"></div></div></section>
+
+<div class="container">
+  <div class="toolbar">
+    <div class="tb-row">
+      <button class="view-pill" id="v-week" data-v="week">Semana · por pessoa</button>
+      <button class="view-pill" id="v-proj" data-v="proj">Projetos</button>
+    </div>
+    <div class="tb-row" id="week-bar" style="display:none">
+      <select class="sel" id="wk-sel" aria-label="Semana"></select>
+      <button class="btn btn-dark" id="btn-plan">Definir outputs · segunda</button>
+      <button class="btn btn-ghost" id="btn-copy-plan">Copiar plano</button>
+      <button class="btn btn-ghost" id="btn-copy-close">Copiar batida · sexta</button>
+    </div>
+    <div class="tb-row" id="proj-pills"></div>
+    <div class="tb-row">
+      <div id="status-tabs" style="display:flex;gap:4px;flex-wrap:wrap"></div>
+      <select class="sel" id="f-gestor" aria-label="Filtrar por gestor"></select>
+      <input class="inp" id="f-q" type="search" placeholder="Buscar tarefa ou KAN-…" aria-label="Buscar" style="min-width:170px">
+      <span class="spacer"></span>
+      <button class="btn btn-dark" id="btn-new-task">+ Nova tarefa</button>
+      <button class="btn btn-ghost" id="btn-new-proj">+ Projeto</button>
+      <button class="btn btn-ghost btn-sm" id="btn-reset" title="Descarta edições locais e volta ao snapshot do Jira">⟳ Snapshot</button>
+    </div>
+  </div>
+  <main class="projects" id="projects"></main>
+</div>
+
+<footer class="footer"><div class="container">
+  <span style="display:flex;align-items:center;gap:10px"><img class="logo-foot" src="data:image/png;base64,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" alt="">ANOVA FINANCIAL TECHNOLOGIES</span>
+  <span>Painel interno de projetos · Fonte: Jira KAN</span>
+</div></footer>
+
+<!-- Modal: tarefa -->
+<div class="overlay" id="ov-task" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="mt-title">Nova tarefa</h3>
+    <p class="m-sub">Toda tarefa precisa de gestor e de uma data de conclusão.</p>
+    <div class="f-group"><label>Título <span class="req">*</span></label><input type="text" id="t-title"></div>
+    <div class="f-group"><label>Projeto <span class="req">*</span></label><select id="t-proj"></select></div>
+    <div class="f-group"><label>Gestor <span class="req">*</span></label><input type="text" id="t-owner" list="owners-dl"><datalist id="owners-dl"></datalist></div>
+    <div class="f-group"><label>Data de conclusão <span class="req">*</span></label><input type="date" id="t-due"><div class="f-err" id="t-err">Preencha título, gestor e data de conclusão: toda tarefa precisa de uma data.</div></div>
+    <div class="f-group"><div class="imp-row"><input type="checkbox" id="t-prio"><label for="t-prio" style="margin:0;cursor:pointer">★ Prioridade</label></div></div>
+    <div class="f-group"><label>Depende de terceiro (deixe vazio se não)</label><input type="text" id="t-wait" list="wait-dl" placeholder="ex.: AssetBank · acesso conta Teams"><datalist id="wait-dl"><option value="AssetBank"><option value="BTG"><option value="XP"><option value="520"><option value="MotoShow"><option value="Prudential"><option value="Cliente"><option value="Parceiro"></datalist></div>
+    <div class="f-group"><label>Notas</label><textarea id="t-notes"></textarea></div>
+    <div class="m-actions">
+      <button class="btn btn-ghost" data-close>Cancelar</button>
+      <button class="btn btn-dark" id="t-save">Salvar tarefa</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: fechamento -->
+<div class="overlay" id="ov-close" role="dialog" aria-modal="true">
+  <div class="modal">
+    <span class="ritual-tag">Fechamento do dia</span>
+    <h3 id="c-title">—</h3>
+    <p class="m-sub" id="c-sub">—</p>
+    <div id="c-step1">
+      <p style="font-weight:600">A tarefa foi executada?</p>
+      <div class="choice-row">
+        <button class="choice pos-c" id="c-yes">Sim, concluída</button>
+        <button class="choice neg-c" id="c-no">Não</button>
+      </div>
+      <div class="m-actions"><button class="btn btn-ghost" data-close>Cancelar</button></div>
+    </div>
+    <div id="c-step2" style="display:none">
+      <div class="f-group"><label>Motivo da não execução <span class="req">*</span></label><textarea id="c-reason"></textarea></div>
+      <div class="f-group"><label>Nova data de conclusão <span class="req">*</span></label><input type="date" id="c-next"></div>
+      <div class="f-group">
+        <div class="imp-row"><input type="checkbox" id="c-imp"><label for="c-imp" style="margin:0;cursor:pointer">Há impeditivo</label></div>
+        <input type="text" id="c-imp-txt" placeholder="Qual é o impeditivo e de quem depende" style="display:none;width:100%;border:1px solid var(--border-hi);border-radius:var(--r-sm);padding:9px 11px">
+        <div class="f-err" id="c-err">Motivo e nova data são obrigatórios. Se há impeditivo, descreva.</div>
+      </div>
+      <div class="m-actions">
+        <button class="btn btn-ghost" data-close>Cancelar</button>
+        <button class="btn btn-dark" id="c-save">Registrar e reprogramar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: cobrança -->
+<div class="overlay" id="ov-cob" role="dialog" aria-modal="true">
+  <div class="modal">
+    <span class="ritual-tag">Registro de cobrança</span>
+    <h3 id="cb-title">—</h3>
+    <p class="m-sub" id="cb-sub">—</p>
+    <div class="f-group"><label>Canal <span class="req">*</span></label>
+      <select id="cb-canal"><option>WhatsApp</option><option>E-mail</option><option>Ligação</option><option>Reunião</option><option>Chamado formal</option></select></div>
+    <div class="f-group"><label>Quem foi cobrado</label><input type="text" id="cb-who" placeholder="nome e cargo do lado do terceiro"></div>
+    <div class="f-group"><div class="imp-row"><input type="checkbox" id="cb-resp"><label for="cb-resp" style="margin:0;cursor:pointer">Houve resposta</label></div></div>
+    <div class="f-group"><label>O que deu na cobrança <span class="req">*</span></label><textarea id="cb-out" placeholder="o que a pessoa respondeu, ou registre que não houve retorno"></textarea></div>
+    <div class="f-group"><label>Prometeu resolver até</label><input type="date" id="cb-prom">
+      <div class="f-err" id="cb-err">Informe o canal e o que deu na cobrança. Se houve resposta, registre a data prometida.</div></div>
+    <div class="m-actions">
+      <button class="btn btn-ghost" data-close>Cancelar</button>
+      <button class="btn btn-dark" id="cb-save">Registrar cobrança</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: projeto -->
+<div class="overlay" id="ov-proj" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3>Novo projeto</h3>
+    <p class="m-sub">Se o Epic já existir no Jira, informe a chave para manter o vínculo.</p>
+    <div class="f-group"><label>Nome <span class="req">*</span></label><input type="text" id="p-name"><div class="f-err" id="p-err">Informe o nome do projeto.</div></div>
+    <div class="f-group"><label>Chave do Epic no Jira (opcional)</label><input type="text" id="p-key" placeholder="KAN-…"></div>
+    <div class="m-actions">
+      <button class="btn btn-ghost" data-close>Cancelar</button>
+      <button class="btn btn-dark" id="p-save">Criar projeto</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: reset -->
+<div class="overlay" id="ov-reset" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3>Restaurar snapshot do Jira</h3>
+    <p class="m-sub">Isso descarta todas as edições feitas no painel (tarefas novas, fechamentos, reprogramações) e volta ao estado importado do Jira em 20/jul/2026. A ação vale para todos que usam o painel.</p>
+    <div class="m-actions">
+      <button class="btn btn-ghost" data-close>Cancelar</button>
+      <button class="btn btn-dark" id="reset-go">Restaurar snapshot</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: definir outputs -->
+<div class="overlay" id="ov-plan" role="dialog" aria-modal="true">
+  <div class="modal wide">
+    <span class="ritual-tag">Ritual de segunda</span>
+    <h3>Definir outputs da semana</h3>
+    <p class="m-sub" id="plan-sub">Marque o que entra como compromisso desta semana. Item sem data de conclusão deve ganhar data.</p>
+    <div class="tb-row">
+      <input class="inp" id="plan-q" type="search" placeholder="Filtrar tarefas…" style="flex:1;min-width:140px">
+      <select class="sel" id="plan-g"></select>
+    </div>
+    <div id="plan-list"></div>
+    <div class="m-actions">
+      <button class="btn btn-ghost" data-close>Cancelar</button>
+      <button class="btn btn-dark" id="plan-save">Confirmar outputs</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SEED = {"generatedAt": "2026-07-20", "projects": [{"id": "KAN-46", "key": "KAN-46", "name": "AssetBanking", "status": "in_progress"}, {"id": "KAN-268", "key": "KAN-268", "name": "MotoShow", "status": "in_progress"}, {"id": "KAN-269", "key": "KAN-269", "name": "CincoDoisZero", "status": "pending"}, {"id": "KAN-10", "key": "KAN-10", "name": "OrquestradorV3", "status": "in_progress"}, {"id": "KAN-270", "key": "KAN-270", "name": "AnovaWealthHubs", "status": "pending"}, {"id": "infra", "key": "KAN-272", "name": "Infraestrutura", "status": "in_progress"}, {"id": "mkt", "key": "KAN-273", "name": "Marketing e Conteúdo", "status": "in_progress"}, {"id": "ops", "key": "KAN-274", "name": "Operações e Clientes", "status": "in_progress"}, {"id": "jur", "key": "KAN-275", "name": "Jurídico e Societário", "status": "in_progress"}, {"id": "com", "key": "KAN-276", "name": "Comercial · Gen Partners", "status": "in_progress"}, {"id": "gestao", "key": "KAN-277", "name": "Interno · Gestão", "status": "in_progress"}, {"id": "KAN-168", "key": "KAN-168", "name": "POC EQI", "status": "pending"}, {"id": "KAN-34", "key": "KAN-34", "name": "Refatoração APIs", "status": "pending"}, {"id": "KAN-41", "key": "KAN-41", "name": "Central de Alocação · V02", "status": "pending"}, {"id": "legacy", "key": null, "name": "Legacy · sem Epic", "status": "pending"}], "tasks": [{"id": "KAN-6", "jira": "KAN-6", "project": "KAN-10", "title": "Desenvolver módulo Whatsapp.", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": "2026-04-24", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-7", "jira": "KAN-7", "project": "KAN-10", "title": "Desenvolver novo front end", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": "2026-04-24", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-11", "jira": "KAN-11", "project": "KAN-10", "title": "Life Invest", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-12", "jira": "KAN-12", "project": "KAN-10", "title": "Mensagens interativas", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-16", "title": "Mensagens interativas do tipo corrossel", "owner": "Pablo Guilherme", "status": "done"}, {"jira": "KAN-17", "title": "Mensagens interativas do tipo listas", "owner": "Pablo Guilherme", "status": "done"}, {"jira": "KAN-19", "title": "Modularização dos elementos do frontend", "owner": "Pablo Guilherme", "status": "done"}]}, {"id": "KAN-14", "jira": "KAN-14", "project": "KAN-10", "title": "Criação de templates", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-18", "jira": "KAN-18", "project": "KAN-10", "title": "Integração da api do OpenRouter", "type": "Feature", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-21", "jira": "KAN-21", "project": "KAN-10", "title": "FrontEnd cards de vida", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-22", "title": "Backend para os cards de vida", "owner": "Pablo Guilherme", "status": "done"}, {"jira": "KAN-36", "title": "Testes de integração com numero de grupo", "owner": "Pablo Guilherme", "status": "done"}, {"jira": "KAN-57", "title": "Diario MOTOSHOW", "owner": "Pablo Guilherme", "status": "done"}]}, {"id": "KAN-25", "jira": "KAN-25", "project": "KAN-10", "title": "Cadastro de produtos", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-26", "jira": "KAN-26", "project": "KAN-10", "title": "Revisão de segurança e Performance", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-27", "jira": "KAN-27", "project": "KAN-10", "title": "Catálogo", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-30", "title": "Implementar aba de monitoramento dos fluxos ", "owner": "Pablo Guilherme", "status": "done"}, {"jira": "KAN-31", "title": "Implementar integração entre o catálogo de produtos com o módulo de fluxos ", "owner": "Pablo Guilherme", "status": "done"}]}, {"id": "KAN-28", "jira": "KAN-28", "project": "KAN-10", "title": "Grupos", "type": "Feature", "owner": "Leonam Lucas", "status": "in_progress", "statusLabel": "Pendência", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-32", "jira": "KAN-32", "project": "KAN-10", "title": "Testes completos", "type": "Tarefa", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-35", "jira": "KAN-35", "project": "KAN-34", "title": "Preparação de repositórios", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-38", "jira": "KAN-38", "project": "KAN-10", "title": "IA que vai captar intensão nas conversas", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-42", "jira": "KAN-42", "project": "KAN-41", "title": "Aba de Posições Atuais — lista de cards por cliente", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": "2026-05-21", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-43", "jira": "KAN-43", "project": "KAN-41", "title": "Indicador de saldo disponível reativo ao carrinho", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": "2026-05-21", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-44", "jira": "KAN-44", "project": "KAN-41", "title": "Painel lateral de ação — Resgatar / + Alocar de posição", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": "2026-05-23", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-45", "jira": "KAN-45", "project": "KAN-41", "title": "Redirecionamento para chat após envio da ordem", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": "2026-05-26", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-47", "jira": "KAN-47", "project": "KAN-46", "title": "[AssetBank] Módulo — Dashboard Inicial + Central de Relacionamento", "type": "Feature", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-48", "jira": "KAN-48", "project": "KAN-46", "title": "[AssetBank] Módulo — Clientes / Cadastro de Cliente", "type": "Feature", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-49", "jira": "KAN-49", "project": "KAN-46", "title": "[AssetBank] Módulo — Contas / Carteiras BTG e XP", "type": "Feature", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-50", "jira": "KAN-50", "project": "KAN-46", "title": "[AssetBank] Módulo — Central de Avisos / Suporte", "type": "Feature", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-51", "jira": "KAN-51", "project": "KAN-46", "title": "[AssetBank] Pré-Kick Off Interno — Mapeamento de Ferramentas, Fluxos e Escopo Negociado", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-52", "jira": "KAN-52", "project": "KAN-46", "title": "[AssetBank] Kick-Off Externo — Alinhamento de Lacunas com a AssetBank", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-54", "jira": "KAN-54", "project": "KAN-46", "title": "[AssetBank] Semana 1 — Tecnologia: Infraestrutura e Plataforma (Implantação, Ambiente, Modularidade, Integrações)", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-55", "jira": "KAN-55", "project": "KAN-10", "title": "Tela de agentes", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-56", "jira": "KAN-56", "project": "KAN-10", "title": "Cadastro e autenticação", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-59", "title": "Implemenstação de permissionamento e tipos de cadastro", "owner": "Pablo Guilherme", "status": "done"}]}, {"id": "KAN-58", "jira": "KAN-58", "project": "KAN-46", "title": "RBAC Auth0", "type": "Feature", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": "2026-06-01", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-64", "title": "Página de perfil", "owner": "Gustavo Lopes", "status": "done"}, {"jira": "KAN-65", "title": "Painel admin", "owner": "Gustavo Lopes", "status": "done"}]}, {"id": "KAN-60", "jira": "KAN-60", "project": "KAN-10", "title": "Fluxo LangGraph MotoShow", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-62", "jira": "KAN-62", "project": "KAN-46", "title": "Central de Atendimento ao Banker", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-66", "jira": "KAN-66", "project": "KAN-10", "title": "Conexão via Cadastro incorporado", "type": "Feature", "owner": "Leonam Lucas", "status": "in_progress", "statusLabel": "Pendência", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-67", "jira": "KAN-67", "project": "KAN-10", "title": "Salvamento de dados auditável", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-68", "jira": "KAN-68", "project": "KAN-10", "title": "Revisão de arquitetura", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-69", "jira": "KAN-69", "project": "KAN-10", "title": "Gravação de vídeo via Web CAM no card de vida", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-70", "jira": "KAN-70", "project": "KAN-46", "title": "[AssetBank] Ajuste Fino — Central de Alocação", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-71", "jira": "KAN-71", "project": "KAN-46", "title": "ClickSign — Criar conta provisória com email Anova para destravar integração", "type": "Tarefa", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-109", "title": "Ciclo de vida de contrato clientes", "owner": "Gustavo Lopes", "status": "done"}, {"jira": "KAN-110", "title": "Criação de modelos", "owner": "Gustavo Lopes", "status": "done"}, {"jira": "KAN-139", "title": "Ciclo de vida contratos Bankers/Unidades", "owner": "Gustavo Lopes", "status": "done"}]}, {"id": "KAN-72", "jira": "KAN-72", "project": "KAN-46", "title": "Brainstorm — Requisitos de funcionamento de contratos (ClickSign + fluxo compliance)", "type": "Tarefa", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-73", "jira": "KAN-73", "project": "KAN-46", "title": "Remodelagem do banco de dados — pessoa pode ser cliente ou banker (dualidade de papel)", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-74", "jira": "KAN-74", "project": "KAN-46", "title": "Frontend — Tela de Unidades + Cadastro de Bankers", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-75", "jira": "KAN-75", "project": "KAN-10", "title": "Ordem de Faturamento Motoshow", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-76", "jira": "KAN-76", "project": "KAN-10", "title": "Novo Fluxo MotoShow", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-82", "jira": "KAN-82", "project": "KAN-46", "title": "[AssetBank] Módulo — Unidades e Bankers", "type": "Feature", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-83", "jira": "KAN-83", "project": "KAN-46", "title": "[AssetBank] Módulo — Financeiro", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-91", "title": "Calculo do FEE mensal", "owner": "Oseias Ayres", "status": "in_progress"}, {"jira": "KAN-92", "title": "Calculo taxa de performnace", "owner": "Pablo Guilherme", "status": "in_progress"}, {"jira": "KAN-111", "title": "Implementação da taxa de performance", "owner": "Pablo Guilherme", "status": "in_progress"}]}, {"id": "KAN-85", "jira": "KAN-85", "project": "KAN-46", "title": "Painel de Personalização Plataforma", "type": "Tarefa", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-86", "jira": "KAN-86", "project": "KAN-46", "title": "[CRÍTICA] Implementação da API Anova + provisão de credenciais via ENV/manifesto Kubernetes (Client ID / Client Secret do cliente)", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-87", "jira": "KAN-87", "project": "KAN-46", "title": "Documentação — Instruções para AssetBank preencher credenciais via manifesto Kubernetes (ENV)", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-89", "jira": "KAN-89", "project": "KAN-46", "title": "Teams — Mapear email/identidade Microsoft, definir implementação e documentar (→ Oseias → Grupo)", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-90", "jira": "KAN-90", "project": "KAN-46", "title": "Implementação Central de Relacionamento", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": "2026-05-31", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-94", "jira": "KAN-94", "project": "KAN-10", "title": "Diário do consultor", "type": "Feature", "owner": "Pablo Guilherme", "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-95", "jira": "KAN-95", "project": "KAN-10", "title": "Logs estruturados, acompanhamento pela plataforma.", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-112", "jira": "KAN-112", "project": "KAN-46", "title": "Ajustes Reunião Asset", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-113", "jira": "KAN-113", "project": "KAN-46", "title": "Necessária Revisão de Segurança e arquitetura em DEV", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-140", "jira": "KAN-140", "project": "KAN-10", "title": "Correção no fluxo de coleta de dados", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-141", "jira": "KAN-141", "project": "KAN-10", "title": "Trazer imagens no carrossel", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-142", "jira": "KAN-142", "project": "KAN-10", "title": "Catálogo de motos via sances", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-143", "jira": "KAN-143", "project": "KAN-10", "title": "Rearranjo dos cards motoshow", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-144", "jira": "KAN-144", "project": "KAN-10", "title": "Adicionar no fluxo de vendas o LiberaCred", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-145", "jira": "KAN-145", "project": "KAN-10", "title": "Ajuste no fluxo (carrossel de ofertas)", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-146", "jira": "KAN-146", "project": "KAN-10", "title": "Revisão de segurança e arquitetura dos repositórios", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-148", "jira": "KAN-148", "project": "KAN-10", "title": "KPI's dos fluxos de atendimento", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-149", "jira": "KAN-149", "project": "KAN-10", "title": "Reajuste do Fluxo Motoshow", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-150", "jira": "KAN-150", "project": "KAN-10", "title": "Correção no nome do cliente", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-151", "jira": "KAN-151", "project": "KAN-10", "title": "Melhoria no formato dos cards", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-152", "jira": "KAN-152", "project": "KAN-10", "title": "Correção da tela de criação de fluxos", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-153", "jira": "KAN-153", "project": "KAN-10", "title": "Indicação de campanhas dos leads", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-154", "jira": "KAN-154", "project": "KAN-46", "title": "Testes E2E na plataforma", "type": "Tarefa", "owner": null, "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-155", "jira": "KAN-155", "project": "KAN-10", "title": "Busca de cards na tela inicial", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-156", "jira": "KAN-156", "project": "KAN-10", "title": "Novo modelo da tela do vendedor", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-157", "jira": "KAN-157", "project": "KAN-10", "title": "Ajustes no fluxo de atendimento motoshow", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-158", "jira": "KAN-158", "project": "KAN-10", "title": "Erros na API OpenRouter travam os chats.", "type": "Bug", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-159", "jira": "KAN-159", "project": "KAN-10", "title": "Responder mensagens no chat", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-160", "jira": "KAN-160", "project": "KAN-10", "title": "Criar uma conta para cada vendedor da Motoshow.", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-161", "jira": "KAN-161", "project": "KAN-10", "title": "Marcador de mensagens não lidas não é limpo ao ler mensagens", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-162", "jira": "KAN-162", "project": "KAN-10", "title": "Adicionar visualização de qual etapa o cliente travou", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-163", "jira": "KAN-163", "project": "KAN-10", "title": "Indicar fora da janela de 24h", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-164", "jira": "KAN-164", "project": "KAN-10", "title": "Filtrar mensagens para o tenant pelo number id.", "type": "Bug", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-165", "jira": "KAN-165", "project": "KAN-10", "title": "Adicionar página da politica de privacidade na tela de login", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-166", "jira": "KAN-166", "project": "KAN-46", "title": "Ajustes do módulo financeiro", "type": "Feature", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em pesquisa", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-167", "jira": "KAN-167", "project": "KAN-10", "title": "Melhora na busca do catalogo de motos", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-169", "jira": "KAN-169", "project": "KAN-46", "title": "Sócios para Unidades e Clientes PJ", "type": "Tarefa", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": "2026-06-25", "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-170", "jira": "KAN-170", "project": "KAN-168", "title": "Planejamento", "type": "Tarefa", "owner": "Leonam Lucas", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-171", "jira": "KAN-171", "project": "KAN-168", "title": "Unidades e Gestores.", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-172", "jira": "KAN-172", "project": "KAN-168", "title": "Dashboard do Gestor", "type": "Feature", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em testes", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-173", "jira": "KAN-173", "project": "KAN-168", "title": "Dashboard do Hunter", "type": "Feature", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em testes", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-174", "jira": "KAN-174", "project": "KAN-168", "title": "Dashboard de admin", "type": "Feature", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em testes", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-175", "jira": "KAN-175", "project": "KAN-168", "title": "Diagnóstico da carteira", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-176", "title": "OCR da carteira", "owner": null, "status": "pending"}, {"jira": "KAN-177", "title": "Contexto do cliente", "owner": null, "status": "pending"}, {"jira": "KAN-178", "title": "Telas do diagnóstico", "owner": null, "status": "pending"}, {"jira": "KAN-179", "title": "geração da apresentação", "owner": null, "status": "pending"}]}, {"id": "KAN-180", "jira": "KAN-180", "project": "KAN-168", "title": "Customização dos perfis de investidor", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-181", "jira": "KAN-181", "project": "KAN-10", "title": "Rever a logica do atenção imediata", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-182", "jira": "KAN-182", "project": "KAN-10", "title": "correção dos cards de kpi's", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-183", "jira": "KAN-183", "project": "KAN-10", "title": "Melhorar a lógica das etapas pós IA", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-184", "jira": "KAN-184", "project": "KAN-10", "title": "Ajuste no fluxo de atendimento Zé Moto", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-185", "jira": "KAN-185", "project": "KAN-10", "title": "Corrigir a troca de senha dos usuarios", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-186", "jira": "KAN-186", "project": "KAN-10", "title": "Correção no envio de imagens dentro do chat", "type": "Feature", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-187", "jira": "KAN-187", "project": "KAN-10", "title": "Envio de recuperação de senha - Resend", "type": "Feature", "owner": "Gustavo Lopes", "status": "in_progress", "statusLabel": "Em pesquisa", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-188", "jira": "KAN-188", "project": "KAN-10", "title": "Agente precisa visualizar imagens na conversa", "type": "Feature", "owner": "Gustavo Lopes", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-190", "jira": "KAN-190", "project": "KAN-10", "title": "Botão para solicitar suporte", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-191", "jira": "KAN-191", "project": "KAN-10", "title": "Registrar quem logou na aba de monitoramento.", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-192", "jira": "KAN-192", "project": "KAN-10", "title": "Retornar os Leads de anúncios para meta", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-193", "jira": "KAN-193", "project": "KAN-10", "title": "Ajustes na plataforma geral", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-194", "jira": "KAN-194", "project": "KAN-10", "title": "Correção no fluxo de atendimento Liberacred", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-195", "jira": "KAN-195", "project": "KAN-10", "title": "Possibilidade de exportar/importar fluxos com json", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-196", "jira": "KAN-196", "project": "KAN-10", "title": "Melhoria automatica do fluxo", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-197", "jira": "KAN-197", "project": "KAN-10", "title": "Distribuição de leads adaptativa", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-198", "jira": "KAN-198", "project": "KAN-10", "title": "Transcrição do áudio na bolha de texto.", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-199", "jira": "KAN-199", "project": "KAN-10", "title": "Notificações no whatsapp dos vendedores", "type": "Feature", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em pesquisa", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-201", "jira": "KAN-201", "project": "KAN-10", "title": "Métricas de tempo de atendimento", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-202", "jira": "KAN-202", "project": "KAN-46", "title": "Automação fundos", "type": "Tarefa", "owner": "Oseias Ayres", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-203", "jira": "KAN-203", "project": "KAN-46", "title": "Revisão Financeiro", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-204", "jira": "KAN-204", "project": "KAN-46", "title": "Importação clientes Asset", "type": "Tarefa", "owner": "Oseias Ayres", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-206", "jira": "KAN-206", "project": "KAN-10", "title": "Criar acesso dos vendedores novos", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-207", "jira": "KAN-207", "project": "KAN-10", "title": "Colocar visível qual o erro no envio da mensagem", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-208", "jira": "KAN-208", "project": "KAN-10", "title": "Alteração da tela de vendores", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-209", "jira": "KAN-209", "project": "KAN-10", "title": "Melhoria no Fluxo Ze Moto", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-210", "jira": "KAN-210", "project": "KAN-10", "title": "Distribuição de leads", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-211", "jira": "KAN-211", "project": "KAN-10", "title": "Melhoria na logica do atenção imediata", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-212", "jira": "KAN-212", "project": "KAN-10", "title": "Permissão de uso dos templates na tela de admin", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-213", "jira": "KAN-213", "project": "KAN-10", "title": "Etapa de venda concluida", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-214", "jira": "KAN-214", "project": "KAN-10", "title": "Auditoria das etapas do agente", "type": "Feature", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em pesquisa", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-215", "jira": "KAN-215", "project": "KAN-10", "title": "Token fixo pro numero de teste", "type": "Tarefa", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-216", "jira": "KAN-216", "project": "KAN-10", "title": "Testes debounce", "type": "Tarefa", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-217", "jira": "KAN-217", "project": "KAN-10", "title": "Passar para o modelo os horários da mensagens", "type": "Feature", "owner": "Leonam Lucas", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-218", "jira": "KAN-218", "project": "KAN-10", "title": "Botão da localização da loja.", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-220", "jira": "KAN-220", "project": "KAN-10", "title": "Listar vendas concluídas na tela de gestor", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-222", "jira": "KAN-222", "project": "KAN-10", "title": "Problema de versões", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-223", "jira": "KAN-223", "project": "KAN-10", "title": "Cadastro de unidade", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-224", "jira": "KAN-224", "project": "KAN-10", "title": "Implementar identificação de cidades proximas", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-225", "jira": "KAN-225", "project": "KAN-10", "title": "Correções de KPI's (vendedores/gerentes)", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-226", "jira": "KAN-226", "project": "KAN-10", "title": "Concorrência de leads", "type": "Bug", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-227", "jira": "KAN-227", "project": "KAN-10", "title": "Distribuição para lojas sem vendedores cadastrados", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-228", "jira": "KAN-228", "project": "KAN-10", "title": "Refatoração da tela de vendedor", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-229", "jira": "KAN-229", "project": "KAN-10", "title": "Refatoração da tela de gerente", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-230", "jira": "KAN-230", "project": "KAN-46", "title": "Rotina histórico de posições", "type": "Tarefa", "owner": "Gustavo Lopes", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-231", "jira": "KAN-231", "project": "KAN-46", "title": "Rotina rentabilidade diária", "type": "Tarefa", "owner": "Gustavo Lopes", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-232", "jira": "KAN-232", "project": "KAN-46", "title": "Rotina rentabilidade mensal", "type": "Tarefa", "owner": "Gustavo Lopes", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-233", "jira": "KAN-233", "project": "KAN-46", "title": "WebView - Cadastro de Cliente, Consulta de Carteiras e alocação de ativos", "type": "Tarefa", "owner": "Ismael Ash", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-234", "jira": "KAN-234", "project": "KAN-46", "title": "Enquadramento de clientes", "type": "Tarefa", "owner": "Oseias Ayres", "status": "in_progress", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-235", "jira": "KAN-235", "project": "KAN-10", "title": "Distribuição store-first: o lead vai para a loja antes de ir para o vendedor", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-236", "jira": "KAN-236", "project": "KAN-10", "title": "Carrossel de motos: escada de resiliência (reenvio e depois lista)", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-237", "jira": "KAN-237", "project": "KAN-10", "title": "Finalizar atendimento: desfecho de perda com justificativa", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-238", "jira": "KAN-238", "project": "KAN-10", "title": "Trava: não é possível finalizar atendimento com o cliente esperando resposta", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-239", "jira": "KAN-239", "project": "KAN-10", "title": "Etapa \"Perdido\" na régua de atendimento", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-240", "jira": "KAN-240", "project": "KAN-10", "title": "Aba \"Fechados\" na tabela de atendimentos do vendedor", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-241", "jira": "KAN-241", "project": "KAN-10", "title": "Perder ou remover um lead devolve a vaga na cota do dia", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-242", "jira": "KAN-242", "project": "KAN-10", "title": "Tela de Usuários: filtro por unidade, loja de cada usuário e contador de ativos", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-243", "jira": "KAN-243", "project": "KAN-10", "title": "Tela de Usuários: os filtros sobrevivem ao cadastro", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-244", "jira": "KAN-244", "project": "KAN-10", "title": "Gerente geral pode redefinir a senha de usuários", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-245", "jira": "KAN-245", "project": "KAN-10", "title": "Cockpit do gerente: paginação, seletor de data e ordenação", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-246", "jira": "KAN-246", "project": "KAN-10", "title": "Reação do cliente passa a aparecer na conversa do card", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-247", "jira": "KAN-247", "project": "KAN-10", "title": "GRAVE: reação com emoji disparava SLA falso e bloqueava o vendedor", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-248", "jira": "KAN-248", "project": "KAN-10", "title": "GRAVE: erro 403 em loop ao abrir a Ordem de Faturamento (produção)", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-249", "jira": "KAN-249", "project": "KAN-10", "title": "GRAVE: erro 429 permanente no Resumo da IA (produção)", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-250", "jira": "KAN-250", "project": "KAN-10", "title": "Lead perdido contava como venda na tabela de atendimentos", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-251", "jira": "KAN-251", "project": "KAN-10", "title": "Detalhe da conversa não devolvia a última mensagem", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-252", "jira": "KAN-252", "project": "KAN-10", "title": "Botão secundário do modal de data ficava ilegível no tema escuro", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-253", "jira": "KAN-253", "project": "KAN-10", "title": "Correções gerais", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-254", "jira": "KAN-254", "project": "KAN-10", "title": "Notificações de atendimento apenas para o dono do lead", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-255", "jira": "KAN-255", "project": "KAN-10", "title": "Exibição do 9º dígito", "type": "Bug", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-256", "jira": "KAN-256", "project": "KAN-10", "title": "Botões Limpar e Resetar IA restritos ao gerente", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-257", "jira": "KAN-257", "project": "KAN-10", "title": "Correção do fluxo da IA que parou em massa (loop de reconciliação)", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-258", "jira": "KAN-258", "project": "KAN-10", "title": "Redução de carga no banco (performance do front)", "type": "Feature", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-259", "jira": "KAN-259", "project": "KAN-10", "title": "Otimização do sistema Motoshow", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em testes", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-260", "jira": "KAN-260", "project": "KAN-10", "title": "Pausar a geração das respostas quando o cliente envia uma nova mensagem", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-261", "jira": "KAN-261", "project": "KAN-10", "title": "Catálogo de imagens e audios para envio rápido", "type": "Feature", "owner": "Pablo Guilherme", "status": "in_progress", "statusLabel": "Em pesquisa", "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-262", "jira": "KAN-262", "project": "KAN-10", "title": "Fotos e videos promocionais das motos", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-263", "jira": "KAN-263", "project": "KAN-10", "title": "Passar Lead atrasado para outro vendedor", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-264", "jira": "KAN-264", "project": "KAN-10", "title": "Agendamento da distribuição de Leads", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-265", "jira": "KAN-265", "project": "KAN-10", "title": "Agenda do vendedor", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-266", "jira": "KAN-266", "project": "KAN-10", "title": "Follow-up automático quando o lead não responde a IA", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-267", "jira": "KAN-267", "project": "KAN-10", "title": "Contingencias Motoshow", "type": "Feature", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-4", "jira": "KAN-4", "project": "KAN-10", "title": "Configurar api key Meta", "type": "Tarefa", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-5", "jira": "KAN-5", "project": "KAN-10", "title": "Criar repositório no GitHub", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": "KAN-8", "title": "Adicionar actions de teste, build e lint", "owner": null, "status": "done"}, {"jira": "KAN-9", "title": "Regras de push nas branches protegidas ", "owner": null, "status": "done"}]}, {"id": "KAN-20", "jira": "KAN-20", "project": "KAN-10", "title": "Finalizar implementação da arquitetura", "type": "Feature", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-77", "jira": "KAN-77", "project": "KAN-268", "title": "Cobrar Paulo — entrega do novo front MotoShow", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": null, "notes": "Prazo original 28/05 (reunião 28/05) · cobrança 2x/dia até entrega. Reavaliar data de conclusão.", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-78", "jira": "KAN-78", "project": "KAN-268", "title": "Definir e criar ambiente de deploy exclusivo MotoShow — alinhar com Regis", "type": "Tarefa", "owner": "Leonam Lucas", "status": "pending", "statusLabel": null, "due": null, "notes": "Prazo original 28/05. Reavaliar data de conclusão.", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-79", "jira": "KAN-79", "project": "KAN-268", "title": "Confirmar com Paulo padrão dos campos em vermelho — Ordem de Faturamento", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "pending", "statusLabel": null, "due": null, "notes": "Prazo original 28/05. Reavaliar data de conclusão.", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-80", "jira": "KAN-80", "project": "KAN-268", "title": "Otimizar leitura de PDF e inserção no banco — timeout com volume alto", "type": "Tarefa", "owner": "Leonam Lucas", "status": "pending", "statusLabel": null, "due": null, "notes": "Prazo original: antes do go-live MotoShow (29/05). Reavaliar data de conclusão.", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-81", "jira": "KAN-81", "project": "KAN-268", "title": "Preparar demo MotoShow para apresentação ao time da 520", "type": "Tarefa", "owner": "Leonam Lucas", "status": "done", "statusLabel": null, "due": null, "notes": "", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-138", "jira": "KAN-138", "project": "KAN-269", "title": "Documentar implementação da 520 (Plataforma Parceiros) + discovery", "type": "Tarefa", "owner": "Leonam Lucas", "status": "pending", "statusLabel": null, "due": null, "notes": "Etapas 1 e 2 e perguntas de discovery detalhadas na descrição do card no Jira.", "closures": [], "doneDate": null, "subs": []}, {"id": "KAN-147", "jira": "KAN-147", "project": "legacy", "title": "[TESTE] Integração painel MotoShow → Jira", "type": "Tarefa", "owner": null, "status": "pending", "statusLabel": null, "due": null, "notes": "Card de teste criado para validar integração. Pode ser excluído na revisão semanal.", "closures": [], "doneDate": null, "subs": []}, {"id": "w26w30-01", "jira": null, "project": "KAN-46", "title": "Destravar bloqueio do BTG · restabelecer arquivos e webhook de movimentações", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Contato direto já aberto, expectativa de fechamento no início da semana. Documentar formalmente todas as tentativas de destravamento: constitui prova de que o impedimento é externo. Enquanto não resolver, foco permanece na frente do IPS.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Abrir chamado formal no canal institucional do BTG e registrar o protocolo", "owner": "Oseias Ayres", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Escalar ao gerente da conta por e-mail, com cópia ao Bruno", "owner": "Oseias Ayres", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Obter do Régis a liberação de acessos do BTG para o time da Asset", "owner": "Oseias Ayres", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Montar dossiê de evidências: e-mails, protocolos, datas e respostas", "owner": "Oseias Ayres", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Testar recebimento de arquivos e webhook após liberação", "owner": "Oseias Ayres", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": "BTG · mudança de política de acesso", "waitingSince": "2026-07-17", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": {"text": "Webhook e API do BTG bloqueados por mudança de política. Trava fundos, apuração de performance, histórico de carteiras e parte do Marco 4.", "date": "2026-07-17"}}, {"id": "w26w30-02", "jira": null, "project": "KAN-46", "title": "Marco 4 · validação do enquadramento de clientes com Dr. João Borja, Danilo e time da Asset", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Dashboard e IPS prontos do nosso lado. Resta validação do cliente e confirmação da precificação.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Agendar sessão de validação com Dr. João Borja, Danilo e time da Asset", "owner": "Oseias Ayres", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Enviar previamente tela de dashboard e IPS para leitura", "owner": "Oseias Ayres", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Conduzir a validação e registrar ajustes solicitados em ata", "owner": "Oseias Ayres", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Confirmar precificação com o Dr. João Borja e fechar o marco", "owner": "Oseias Ayres", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": "AssetBank · validação do cliente e confirmação de precificação", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-03", "jira": null, "project": "KAN-46", "title": "Configuração inicial da XP · certificado emitido e infraestrutura pronta até sexta", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Meta da semana: chegar na sexta com certificado emitido e infra pronta, para que na semana seguinte reste apenas fechar a integração. Apoio de Régis na emissão.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Levantar com Régis a lista de fornecedores homologados enviada pela XP", "owner": "Oseias Ayres", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Cobrar do cliente a emissão do certificado CRS, com prazo escrito", "owner": "Oseias Ayres", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Provisionar a infraestrutura de integração no ambiente da Asset", "owner": "Oseias Ayres", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Validar certificado emitido e deixar ambiente pronto para integrar", "owner": "Oseias Ayres", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": "Cliente · emissão do certificado CRS e dados da XP", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": {"text": "Certificado CRS não emitido pelo cliente: bloqueia integralmente a integração com a XP.", "date": "2026-07-20"}}, {"id": "w26w30-04", "jira": null, "project": "KAN-46", "title": "Marco 5 · sustentar cadência com Ismael na conexão do número do cliente", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Alinhar com Ismael o status da definição do número pelo cliente", "owner": "Oseias Ayres", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Cobrar o cliente na quarta se o número não estiver definido", "owner": "Oseias Ayres", "due": "2026-07-22", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-05", "jira": null, "project": "KAN-46", "title": "Obter do Régis os acessos do BTG para o time da Asset", "type": "Tarefa", "owner": "Oseias Ayres", "status": "pending", "statusLabel": null, "due": "2026-07-22", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Listar exatamente quais acessos e para quais pessoas", "owner": "Oseias Ayres", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Enviar a solicitação ao Régis e confirmar recebimento", "owner": "Oseias Ayres", "due": "2026-07-21", "status": "pending"}], "priority": false, "waitingOn": "Régis · liberação de acessos", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-06", "jira": null, "project": "KAN-268", "title": "Estabilizar a plataforma em 100% até sexta · zero travamento em pico de acesso", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Precede qualquer nova funcionalidade. Contexto: quinta houve bloqueio de envio de carrosséis pela Meta com paralisação de atendimentos; sexta, lentidão sob carga de ~2.000 atendimentos simultâneos.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Reproduzir o cenário de pico de ~2.000 atendimentos em ambiente de teste", "owner": "Pablo Guilherme", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Corrigir o gargalo de envio de carrosséis identificado na quinta", "owner": "Pablo Guilherme", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Executar teste de carga com Régis após o auto scale de pods", "owner": "Pablo Guilherme", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Monitorar 24h sem travamento e declarar estabilização", "owner": "Pablo Guilherme", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-07", "jira": null, "project": "KAN-268", "title": "Resolver gargalos identificados após implementação nas lojas", "type": "Tarefa", "owner": "Leonam Lucas", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Otimizações já mapeadas e em andamento.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Consolidar a lista de gargalos mapeados nas lojas em um único documento", "owner": "Leonam Lucas", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Aplicar as otimizações já mapeadas em ambiente de homologação", "owner": "Leonam Lucas", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Subir para produção e medir tempo de resposta antes e depois", "owner": "Leonam Lucas", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-08", "jira": null, "project": "KAN-268", "title": "Documentar no Jira as pendências do cliente · sem execução até a estabilização", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Registrar sem executar: a fila só reabre depois da estabilização concluída.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Compilar as pendências abertas pelo cliente desde a implantação nas lojas", "owner": "Pablo Guilherme", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Criar os cards no Epic MotoShow com responsável e prazo na descrição", "owner": "Pablo Guilherme", "due": "2026-07-22", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-09", "jira": null, "project": "KAN-268", "title": "Estruturar contingência dos números MotoShow com Ismael · risco de bloqueio pela Meta", "type": "Tarefa", "owner": "Pablo Guilherme", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Mesmo operando com a API oficial da Meta o risco persiste.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Levantar com Ismael o portfólio de números reserva disponíveis", "owner": "Pablo Guilherme", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Documentar o procedimento de troca de número em caso de bloqueio", "owner": "Pablo Guilherme", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Validar o plano com Bruno e estimar custo de recuperação de demanda", "owner": "Pablo Guilherme", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": {"text": "Números da MotoShow sob risco de bloqueio pela Meta. Um bloqueio paralisa integralmente a operação comercial e gera custo para reaver a demanda vinculada ao número anterior.", "date": "2026-07-20"}}, {"id": "w26w30-10", "jira": null, "project": "KAN-46", "title": "Conectar e testar o WhatsApp do cliente em produção · Asset Bank", "type": "Tarefa", "owner": "Ismael Ash", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Fluxo já testado localmente. Falta definição do número pelo cliente e conexão na Meta. Implementação da API oficial em sessão única de tela compartilhada, com número já adquirido e alguém com acesso ao gerenciador de negócios da Meta presente.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Cobrar do cliente a definição do número, com prazo de quarta", "owner": "Ismael Ash", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Agendar a sessão única de tela compartilhada para conexão na Meta", "owner": "Ismael Ash", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Executar a conexão com alguém do cliente com acesso ao gerenciador", "owner": "Ismael Ash", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Testar o fluxo em produção e registrar evidência", "owner": "Ismael Ash", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": "AssetBank · definição do número pelo cliente", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-11", "jira": null, "project": "KAN-46", "title": "Entregar hoje o pacote de desbloqueio ao cliente · número de exemplo + documento de aquisição", "type": "Tarefa", "owner": "Ismael Ash", "status": "pending", "statusLabel": null, "due": "2026-07-20", "notes": "Número de exemplo com dados mocados para teste do fluxo, mais documento explicando como adquirir o número (Zenvia e Salve). Prazo de quarta para devolutiva de textos e número. Evitar reuniões de ajuste: cliente testa e devolve só os textos que quer alterar.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Preparar número de exemplo com dados mocados", "owner": "Ismael Ash", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Redigir o documento de aquisição de número (Zenvia e Salve)", "owner": "Ismael Ash", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Enviar o pacote ao cliente com prazo explícito de quarta", "owner": "Ismael Ash", "due": "2026-07-20", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-12", "jira": null, "project": "KAN-46", "title": "Cobrar devolutiva do cliente sobre textos e número · prazo quarta", "type": "Tarefa", "owner": "Ismael Ash", "status": "pending", "statusLabel": null, "due": "2026-07-22", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Cobrança de abertura na terça de manhã", "owner": "Ismael Ash", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Cobrança de fechamento na quarta e escalar ao Bruno se não houver resposta", "owner": "Ismael Ash", "due": "2026-07-22", "status": "pending"}], "priority": false, "waitingOn": "Cliente · devolutiva de textos e número", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-13", "jira": null, "project": "KAN-269", "title": "Estruturar contingência de números para 520 · portfólio, múltiplas abas, novo app e tech provider Meta", "type": "Tarefa", "owner": "Ismael Ash", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Mapear portfólio de números, múltiplas abas e novo aplicativo", "owner": "Ismael Ash", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Avaliar contratação de tech provider da Meta e levantar custo", "owner": "Ismael Ash", "due": "2026-07-24", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-14", "jira": null, "project": "KAN-269", "title": "Iniciar especificação de criação e gestão de grupos na 520", "type": "Tarefa", "owner": "Ismael Ash", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Cobrar do cliente o apontamento de domínio, com prazo escrito", "owner": "Ismael Ash", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Escrever a especificação de criação e gestão de grupos", "owner": "Ismael Ash", "due": "2026-07-24", "status": "pending"}], "priority": false, "waitingOn": "520 · apontamento de domínio pelo cliente", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": {"text": "Domínio da 520 não apontado pelo cliente: bloqueia o início da estrutura de criação e gestão de grupos.", "date": "2026-07-20"}}, {"id": "w26w30-15", "jira": null, "project": "infra", "title": "Apoiar ambiente da Asset Bank · resolução de DNS e TLS e emissão dos novos certificados", "type": "Tarefa", "owner": "Rodrigo Régis Palmeira", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "A XP já encaminhou por e-mail a lista de fornecedores homologados.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Diagnosticar a resolução de DNS e TLS no ambiente da Asset", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Selecionar fornecedor a partir da lista homologada pela XP", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Emitir e instalar os novos certificados", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-16", "jira": null, "project": "infra", "title": "Tornar a MotoShow escalável · configurar auto scale de pods no Kubernetes", "type": "Tarefa", "owner": "Rodrigo Régis Palmeira", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Upgrade de banco já executado. Falta o auto scale para expandir e reduzir conforme volume de requisições.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Definir métricas e limites de expansão e redução dos pods", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Configurar o auto scale em homologação", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Validar em teste de carga junto com Pablo e promover para produção", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-23", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-17", "jira": null, "project": "infra", "title": "Levantar prazo e requisitos do certificado CRS junto ao fornecedor", "type": "Tarefa", "owner": "Rodrigo Régis Palmeira", "status": "pending", "statusLabel": null, "due": "2026-07-22", "notes": "Objetivo: dar ao cliente uma data de expectativa clara e permitir cobrança objetiva.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Contatar o fornecedor e levantar prazo, requisitos e documentos", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Enviar a Oseias a data de expectativa para cobrança objetiva do cliente", "owner": "Rodrigo Régis Palmeira", "due": "2026-07-22", "status": "pending"}], "priority": false, "waitingOn": "Fornecedor · prazo e requisitos do certificado", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-18", "jira": null, "project": "mkt", "title": "Furar a bolha de alcance · de ~200 para 900 a 1.000 visualizações por vídeo", "type": "Tarefa", "owner": "Bianca Costa", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Crescimento de alcance entre não seguidores é a métrica que importa.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Analisar os vídeos atuais e identificar padrão dos de maior alcance", "owner": "Bianca Costa", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Testar três formatos de gancho voltados a não seguidores", "owner": "Bianca Costa", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Medir visualizações e alcance entre não seguidores e reportar", "owner": "Bianca Costa", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-19", "jira": null, "project": "mkt", "title": "Construir painel de conversão de não seguidor para seguidor", "type": "Tarefa", "owner": "Bianca Costa", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Explorar o aplicativo da Meta já disponível ou solução equivalente. Bruno entra no loop para contribuir com a construção.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Avaliar o aplicativo da Meta disponível e alternativas equivalentes", "owner": "Bianca Costa", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Definir com Bruno as métricas do painel", "owner": "Bianca Costa", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Montar a primeira versão do painel com dados reais", "owner": "Bianca Costa", "due": "2026-07-24", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-20", "jira": null, "project": "mkt", "title": "Alimentar playbook de carrosséis e brandbook", "type": "Tarefa", "owner": "Bianca Costa", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Mesmo em fase de teste de modelos, para a documentação não ficar defasada.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Registrar no playbook os modelos testados nesta semana", "owner": "Bianca Costa", "due": "2026-07-24", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-21", "jira": null, "project": "mkt", "title": "Desmembrar material de produtização · foco em MotoShow e Life Invest", "type": "Tarefa", "owner": "Bianca Costa", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Nesta fase o objetivo não é publicação em redes: é acervo institucional descrevendo cada módulo (o que resolve, como resolve, qual tecnologia sustenta). Uso em eventos e no pipeline com Bruno e Dr. João Borja.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Desmembrar o material enviado por Bruno em módulos", "owner": "Bianca Costa", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Escrever as fichas de MotoShow: o que resolve, como resolve, tecnologia", "owner": "Bianca Costa", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Escrever as fichas de Life Invest no mesmo padrão", "owner": "Bianca Costa", "due": "2026-07-24", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-22", "jira": null, "project": "ops", "title": "Automatizar o disparo de relatórios · sair do processo manual", "type": "Tarefa", "owner": "Diovana", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Precisa estar pronto antes do próximo ciclo de contato com clientes, previsto para cerca de duas semanas.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Mapear o processo manual atual ponta a ponta", "owner": "Diovana", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Especificar a automação com o time de tecnologia", "owner": "Diovana", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Testar o disparo automático com um lote piloto de clientes", "owner": "Diovana", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-23", "jira": null, "project": "ops", "title": "Cobertura de grupos de WhatsApp · de 60% para no mínimo 95% da base até sexta", "type": "Tarefa", "owner": "Diovana", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Extrair a base atual e identificar quem está fora dos grupos", "owner": "Diovana", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Executar a inclusão em lotes diários e registrar o avanço", "owner": "Diovana", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Fechar a semana com no mínimo 95% e reportar o número", "owner": "Diovana", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-24", "jira": null, "project": "ops", "title": "Segmentação de carteiras · identificar carteira personalizada e administrada no card de vida", "type": "Tarefa", "owner": "Diovana", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Objetivo: cruzar a comunicação de research com os ativos efetivamente alocados por cada cliente.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Definir os critérios de carteira personalizada e administrada", "owner": "Diovana", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Especificar a estrutura dentro do card de vida", "owner": "Diovana", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Validar o cruzamento entre research e ativos alocados", "owner": "Diovana", "due": "2026-07-24", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-25", "jira": null, "project": "ops", "title": "Reunião de mapeamento do fluxo de atendimento com Dr. João Borja · terça 21/07, 3h", "type": "Tarefa", "owner": "Diovana", "status": "pending", "statusLabel": null, "due": "2026-07-21", "notes": "Risco jurídico: a emissão de relatórios é obrigação da gestora, não da Anova. Contato direto com o cliente final navega em zona cinzenta regulatória e já produz desconforto com parceiros. Dois riscos: ruptura de relacionamento com o parceiro e assunção aparente de responsabilidades que não são nossas.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Preparar o desenho atual do fluxo antes da reunião", "owner": "Diovana", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Conduzir a reunião de três horas com Dr. João Borja", "owner": "Diovana", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Consolidar a ata com os pontos de exposição regulatória", "owner": "Diovana", "due": "2026-07-22", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-26", "jira": null, "project": "ops", "title": "Compilar riscos e contrapartidas em documento único para decisão do Paulo", "type": "Tarefa", "owner": "Diovana", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Decisão a ser tomada: permanecer ou não na zona cinzenta atual.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Listar os riscos: ruptura com parceiro e assunção de responsabilidade", "owner": "Diovana", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Descrever as contrapartidas e os cenários de saída", "owner": "Diovana", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Entregar o documento único ao Paulo para decisão", "owner": "Diovana", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-27", "jira": null, "project": "jur", "title": "Finalizar estrutura societária · concluir a holding e dar entrada na holding master e na assessoria", "type": "Tarefa", "owner": "Dr. João Borja", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Poucos ajustes remanescentes na holding.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Concluir os ajustes remanescentes da holding", "owner": "Dr. João Borja", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Dar entrada na holding master", "owner": "Dr. João Borja", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Dar entrada na assessoria de investimentos", "owner": "Dr. João Borja", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-28", "jira": null, "project": "jur", "title": "Convocar reunião master de estrutura antes da entrada", "type": "Tarefa", "owner": "Dr. João Borja", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Pauta única: arquitetura societária, acordo de acionistas, distribuição de dividendos, entrada e saída de sócios, plano de vesting e métricas de carreira.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Definir data e convocar os sócios antes da entrada", "owner": "Dr. João Borja", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Circular a pauta: societária, acordo, dividendos, entrada e saída, vesting", "owner": "Dr. João Borja", "due": "2026-07-22", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-29", "jira": null, "project": "jur", "title": "Destravar o aditivo contratual da Asset Bank · devolutiva de precificação e novos prazos", "type": "Tarefa", "owner": "Dr. João Borja", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Orientação: operar pela ordem de entrega, priorizando o encerramento do que resta do Marco 3, enquanto se aguarda a devolutiva formal do cliente.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Cobrar formalmente a devolutiva do cliente sobre a precificação", "owner": "Dr. João Borja", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Consolidar os novos prazos no texto do aditivo", "owner": "Dr. João Borja", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Encaminhar para assinatura e registrar a data de envio", "owner": "Dr. João Borja", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": "AssetBank · devolutiva formal sobre precificação", "waitingSince": "2026-07-20", "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": {"text": "Aditivo contratual da Asset Bank não assinado: prazos juridicamente indefinidos, vigora o contrato original com prazos vencidos.", "date": "2026-07-20"}}, {"id": "w26w30-30", "jira": null, "project": "jur", "title": "Fechar a precificação do Marco 4 · ainda nesta segunda", "type": "Tarefa", "owner": "Dr. João Borja", "status": "pending", "statusLabel": null, "due": "2026-07-20", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Fechar a precificação e comunicar a Oseias e Bruno", "owner": "Dr. João Borja", "due": "2026-07-20", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-31", "jira": null, "project": "com", "title": "Frentes estratégicas · Grupo Amazonas, Gen Partners e projeto Ticomia", "type": "Tarefa", "owner": "Dr. João Borja", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Viabilização do negócio com o Grupo Amazonas, aproximação comercial com a Gen Partners e estruturação do projeto Ticomia.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Grupo Amazonas: definir próximo passo de viabilização", "owner": "Dr. João Borja", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Gen Partners: alinhar a aproximação comercial com Bruno", "owner": "Dr. João Borja", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Ticomia: registrar o escopo inicial do projeto", "owner": "Dr. João Borja", "due": "2026-07-24", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-32", "jira": null, "project": "KAN-269", "title": "Destravar a 520 · iniciar a operação com a W1", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Projeto hoje sem cobrança e com receita futura estimada: por isso a aceleração é prioritária.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Cobrar da W1 as pré-condições: número, identidade visual e planilhas", "owner": "Bruno Sizenando", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Confirmar a lista de consultores da W1 para o piloto", "owner": "Bruno Sizenando", "due": "2026-07-22", "status": "pending"}, {"jira": null, "title": "Definir a data de início do piloto e comunicar ao time", "owner": "Bruno Sizenando", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-33", "jira": null, "project": "com", "title": "Gen Partners · clareza de pipeline com o hub de negócios", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "O que está em tela, o que já está contratado, o que falta executar e quem é o responsável por cada frente.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Levantar com o hub o que está em tela e o que já está contratado", "owner": "Bruno Sizenando", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Atribuir responsável a cada frente em aberto", "owner": "Bruno Sizenando", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Consolidar o pipeline em visão única e apresentar", "owner": "Bruno Sizenando", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-34", "jira": null, "project": "gestao", "title": "Painel de pendências e cadência · começando pela frente do Oseias", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Mecanismo que torne visível o que precisa ser feito, por quem, até quando e com qual impacto. Tratado como output desta semana, não como melhoria futura: a semana vinha começando sem painel claro de entregas e impactos.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Validar o painel com Oseias usando a frente dele como piloto", "owner": "Bruno Sizenando", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Rodar a batida de sexta com o time usando o painel", "owner": "Bruno Sizenando", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-35", "jira": null, "project": "KAN-268", "title": "MotoShow · escalar anúncios de mídia paga para gerar demanda", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Evidenciar ao cliente o resultado produzido pela plataforma.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Definir verba e praças com Bianca", "owner": "Bruno Sizenando", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Subir a campanha e acompanhar volume de demanda gerada", "owner": "Bruno Sizenando", "due": "2026-07-23", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-36", "jira": null, "project": "gestao", "title": "Garantir recursos e desbloqueios para todas as cadeiras ao longo da semana", "type": "Tarefa", "owner": "Bruno Sizenando", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Rodar a revisão de bloqueios na segunda de manhã", "owner": "Bruno Sizenando", "due": "2026-07-20", "status": "pending"}, {"jira": null, "title": "Checagem de meio de semana com cada cadeira", "owner": "Bruno Sizenando", "due": "2026-07-22", "status": "pending"}], "priority": false, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": null}, {"id": "w26w30-37", "jira": null, "project": "gestao", "title": "Contingência do número único dos grupos da Anova Research", "type": "Tarefa", "owner": "Leonam Lucas", "status": "pending", "statusLabel": null, "due": "2026-07-24", "notes": "Cadência compartilhada entre Leonam e Bruno.", "closures": [], "doneDate": null, "subs": [{"jira": null, "title": "Levantar quantos grupos ativos dependem do número atual", "owner": "Leonam Lucas", "due": "2026-07-21", "status": "pending"}, {"jira": null, "title": "Definir com Bruno o plano de redundância do número", "owner": "Leonam Lucas", "due": "2026-07-23", "status": "pending"}, {"jira": null, "title": "Documentar o procedimento de recuperação em caso de perda", "owner": "Leonam Lucas", "due": "2026-07-24", "status": "pending"}], "priority": true, "waitingOn": null, "waitingSince": null, "cobrancas": [], "week": "2026-07-20", "weekLog": [], "impediment": {"text": "Número único em uso nos grupos da Anova Research: perda do número implica perda de todos os grupos ativos.", "date": "2026-07-20"}}]};
+const STORAGE_KEY = 'anova-painel-projetos-v5';
+const ST_LABEL = {pending:'A fazer', in_progress:'Em andamento', done:'Concluído'};
+const OWNER_EMAILS = {'Oseias Ayres':'oseias.ayres@gmail.com','Leonam Lucas':'leonamlcs1@gmail.com','Pablo Guilherme':'plabo.jbs@gmail.com','Diovana':'diovana@anovainvestimentos.com.br','Gustavo Lopes':'gustavourio@gmail.com','Bruno Sizenando':'bruno@anovainvestimentos.com.br'};
+let state = null;
+let persistMode = 'local';
+let filters = {project:'all', gestor:'all', status:'all', q:'', view:'week', selectedWeek:null};
+let expanded = {};
+let openProj = {};
+let editingId = null;
+let closingId = null;
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const todayISO = () => { const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); };
+const fmtD = iso => { if(!iso) return ''; const [y,m,d]=iso.split('-'); return d+'/'+m+'/'+y.slice(2); };
+const clone = o => JSON.parse(JSON.stringify(o));
+const CANON_ORDER = ['Oseias Ayres','Pablo Guilherme','Leonam Lucas','Ismael Ash','Rodrigo Régis Palmeira','Bianca Costa','Diovana','Dr. João Borja','Bruno Sizenando','Gustavo Lopes'];
+function mondayOf(d){ const x=new Date(d); const day=x.getDay(); x.setDate(x.getDate()+(day===0?-6:1-day)); return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0'); }
+const currentWeek = () => mondayOf(new Date());
+function weekLabel(w){ const [y,m,d]=w.split('-').map(Number); const mo=new Date(y,m-1,d); const fr=new Date(y,m-1,d+4); const f=x=>String(x.getDate()).padStart(2,'0')+'/'+String(x.getMonth()+1).padStart(2,'0'); return f(mo)+' a '+f(fr); }
+function lastCob(t){ const c=t.cobrancas||[]; return c.length ? c[c.length-1] : null; }
+function promessa(t){ const c=(t.cobrancas||[]).filter(x=>x.promisedDate); return c.length ? c[c.length-1].promisedDate : null; }
+function promessaVencida(t){ const p=promessa(t); return !!(p && p < todayISO() && t.waitingOn && t.status!=='done'); }
+const daysSince = iso => { if(!iso) return 0; return Math.max(0, Math.floor((new Date(todayISO()+'T12:00:00') - new Date(iso+'T12:00:00')) / 86400000)); };
+function projName(pid){ const p=state.projects.find(x=>x.id===pid); return p?p.name:pid; }
+function upsertWeekLog(t,w,data){ t.weekLog=t.weekLog||[]; const i=t.weekLog.findIndex(l=>l.week===w); const e=Object.assign({week:w,date:todayISO()},data); if(i>=0)t.weekLog[i]=e; else t.weekLog.push(e); }
+function outcome(t,w){ const l=(t.weekLog||[]).find(x=>x.week===w); if(l&&l.outcome==='entregue') return 'entregue'; if(t.week===w&&t.status==='done') return 'entregue'; if(l) return 'nao'; if(t.week===w) return 'aberto'; return null; }
+function weekTasks(w){ return state.tasks.filter(t => t.week===w || (t.weekLog||[]).some(l=>l.week===w)); }
+function collectWeeks(){ const s=new Set([currentWeek()]); state.tasks.forEach(t=>{ if(t.week)s.add(t.week); (t.weekLog||[]).forEach(l=>s.add(l.week)); }); return [...s].sort().reverse(); }
+
+function flags(t){
+  const today = todayISO();
+  const open = t.status !== 'done';
+  return {
+    overdue: open && t.due && t.due < today,
+    dueToday: open && t.due === today,
+    noDue: open && !t.due
+  };
+}
+
+/* ── persistence ── */
+async function loadState(){
+  try{
+    const r = await window.storage.get(STORAGE_KEY, true);
+    if(r && r.value){ state = JSON.parse(r.value); persistMode='shared'; return; }
+  }catch(e){ /* chave inexistente ou storage indisponível */ }
+  state = clone(SEED);
+  try{ await window.storage.set(STORAGE_KEY, JSON.stringify(state), true); persistMode='shared'; }
+  catch(e){ persistMode='local'; }
+}
+let saveTimer=null;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try{
+      const r = await window.storage.set(STORAGE_KEY, JSON.stringify(state), true);
+      persistMode = r ? 'shared' : 'local';
+    }catch(e){ persistMode='local'; }
+    badge();
+  }, 350);
+}
+function badge(){
+  const b = $('#save-badge');
+  if(persistMode==='shared'){ b.textContent = 'Salvo · compartilhado com o time'; b.classList.add('save-ok'); }
+  else { b.textContent = 'Sessão local · sem persistência'; b.classList.remove('save-ok'); }
+}
+
+/* ── derived ── */
+function projTasks(pid){ return state.tasks.filter(t => t.project===pid); }
+function projPct(pid){
+  const ts = projTasks(pid);
+  if(!ts.length) return 0;
+  return Math.floor(ts.filter(t=>t.status==='done').length / ts.length * 100);
+}
+function owners(){
+  const s = new Set(CANON_ORDER);
+  state.tasks.forEach(t => { if(t.owner) s.add(t.owner); });
+  return [...s].sort();
+}
+
+/* ── filtering / sorting ── */
+function visibleTasks(){
+  const q = filters.q.trim().toLowerCase();
+  return state.tasks.filter(t => {
+    if(filters.project!=='all' && t.project!==filters.project) return false;
+    if(filters.gestor!=='all'){
+      if(filters.gestor==='__none' ? !!t.owner : t.owner!==filters.gestor) return false;
+    }
+    const f = flags(t);
+    if(filters.status==='due'){ if(!(f.overdue||f.dueToday)) return false; }
+    else if(filters.status==='imp'){ if(!(t.impediment && t.status!=='done')) return false; }
+    else if(filters.status==='nodue'){ if(!(t.status!=='done' && !t.due)) return false; }
+    else if(filters.status==='prio'){ if(!(t.priority && t.status!=='done')) return false; }
+    else if(filters.status==='wait'){ if(!(t.waitingOn && t.status!=='done')) return false; }
+    else if(filters.status==='promv'){ if(!promessaVencida(t)) return false; }
+    else if(filters.status!=='all' && t.status!==filters.status) return false;
+    if(q && !((t.title||'').toLowerCase().includes(q) || (t.jira||'').toLowerCase().includes(q))) return false;
+    return true;
+  });
+}
+function sortTasks(a,b){
+  const fa=flags(a), fb=flags(b);
+  const pa=(a.priority&&a.status!=='done')?0:1, pb=(b.priority&&b.status!=='done')?0:1;
+  if(pa!==pb) return pa-pb;
+  const rank = (t,f) => f.overdue?0 : f.dueToday?1 : t.status==='in_progress'?2 : t.status==='pending'?3 : 4;
+  const ra=rank(a,fa), rb=rank(b,fb);
+  if(ra!==rb) return ra-rb;
+  if(a.due&&b.due&&a.due!==b.due) return a.due<b.due?-1:1;
+  if(a.due&&!b.due) return -1;
+  if(!a.due&&b.due) return 1;
+  return 0;
+}
+
+/* ── render ── */
+function renderStats(){
+  const w = filters.selectedWeek || currentWeek();
+  const wt = weekTasks(w);
+  const ent = wt.filter(t=>outcome(t,w)==='entregue').length;
+  const nao = wt.filter(t=>outcome(t,w)==='nao').length;
+  const ab  = wt.filter(t=>outcome(t,w)==='aberto').length;
+  const taxa = wt.length ? Math.floor(ent/wt.length*100) : 0;
+  const venc = state.tasks.filter(t=>flags(t).overdue).length;
+  const imped = state.tasks.filter(t=>t.impediment && t.status!=='done').length;
+  const semData = state.tasks.filter(t=>t.status!=='done' && !t.due).length;
+  const prio = state.tasks.filter(t=>t.priority && t.status!=='done').length;
+  const wait = state.tasks.filter(t=>t.waitingOn && t.status!=='done').length;
+  $('#stats').innerHTML =
+    stat(wt.length,'Outputs da semana','clickable','week') +
+    stat(ent,'Entregues','clickable','week') +
+    stat(ab+nao,'A entregar','clickable','week') +
+    stat(prio,'★ Prioridades','clickable','prio') +
+    stat(wait,'Aguardando 3º', wait?'today clickable':'clickable','wait') +
+    stat(state.tasks.filter(promessaVencida).length,'Promessa vencida', state.tasks.filter(promessaVencida).length?'warn clickable':'clickable','promv') +
+    stat(venc,'Vencidas', venc?'warn clickable':'clickable','due') +
+    stat(imped,'Impeditivos', imped?'warn clickable':'clickable','imp') +
+    stat(semData,'Sem data','clickable','nodue') +
+    stat(taxa+'%','Taxa da semana','clickable','week');
+  document.querySelectorAll('.stat.clickable').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const act = el.dataset.act;
+      if(act==='week'){ filters.view='week'; }
+      else { filters.view='proj'; filters.status=act; }
+      renderAll();
+    });
+  });
+}
+function stat(n,l,cls='',act=''){ return '<div class="stat '+cls+'" '+(act?'data-act="'+act+'"':'')+'><div class="n">'+n+'</div><div class="l">'+l+'</div></div>'; }
+
+function renderPills(){
+  let h = '<button class="pill'+(filters.project==='all'?' on':'')+'" data-p="all">Todos os projetos</button>';
+  state.projects.forEach(p => {
+    h += '<button class="pill'+(filters.project===p.id?' on':'')+'" data-p="'+esc(p.id)+'">'+esc(p.name)+'<span class="pct">'+projPct(p.id)+'%</span></button>';
+  });
+  $('#proj-pills').innerHTML = h;
+  document.querySelectorAll('#proj-pills .pill').forEach(b => b.addEventListener('click', ()=>{ filters.project=b.dataset.p; if(b.dataset.p!=='all') openProj[b.dataset.p]=true; renderAll(); }));
+}
+
+function renderTabs(){
+  const tabs = [['all','Todas'],['pending','A fazer'],['in_progress','Em andamento'],['done','Concluídas'],['due','⚠ Fechamento'],['imp','Impeditivos'],['prio','★ Prioridade'],['wait','Aguardando 3º'],['promv','Promessa vencida']];
+  $('#status-tabs').innerHTML = tabs.map(([k,l]) =>
+    '<button class="tab'+((k==='due'||k==='imp'||k==='promv')?' alert':'')+(filters.status===k?' on':'')+'" data-s="'+k+'">'+l+'</button>').join('');
+  document.querySelectorAll('#status-tabs .tab').forEach(b => b.addEventListener('click', ()=>{ filters.status=b.dataset.s; renderAll(); }));
+}
+
+function renderGestor(){
+  const cur = filters.gestor;
+  let h = '<option value="all">Todos os gestores</option>';
+  owners().forEach(o => h += '<option value="'+esc(o)+'"'+(cur===o?' selected':'')+'>'+esc(o)+'</option>');
+  h += '<option value="__none"'+(cur==='__none'?' selected':'')+'>Sem gestor</option>';
+  $('#f-gestor').innerHTML = h;
+}
+
+function gcalUrl(t){
+  const d = (t.due || todayISO()).replace(/-/g,'');
+  const nx = new Date((t.due||todayISO())+'T12:00:00'); nx.setDate(nx.getDate()+1);
+  const d2 = nx.getFullYear()+String(nx.getMonth()+1).padStart(2,'0')+String(nx.getDate()).padStart(2,'0');
+  const proj = state.projects.find(p=>p.id===t.project);
+  const det = 'Painel de Projetos ANOVA'+(proj?' · '+proj.name:'')+(t.owner?' · Gestor: '+t.owner:'')+(t.jira?' · '+t.jira:'');
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('[ANOVA] '+t.title)+'&dates='+d+'/'+d2+'&details='+encodeURIComponent(det)+(t.owner&&OWNER_EMAILS[t.owner]?'&add='+encodeURIComponent(OWNER_EMAILS[t.owner]):'');
+}
+
+function taskRow(t, mode){
+  const f = flags(t);
+  const w = filters.selectedWeek || currentWeek();
+  const oc = mode==='week' ? outcome(t,w) : null;
+  const reprog = (t.closures||[]).filter(c=>!c.executed).length;
+  const cls = 'trow'+(f.overdue?' overdue':'')+(f.dueToday?' today-due':'')+((t.priority&&t.status!=='done')?' prio':'')+(expanded[t.id]?' exp':'');
+  let due;
+  if(t.status==='done') due = '<span class="chip due-ok">✓ '+(t.doneDate?fmtD(t.doneDate):'concluída')+'</span>';
+  else if(f.overdue) due = '<span class="chip due-late">venceu '+fmtD(t.due)+'</span>';
+  else if(f.dueToday) due = '<span class="chip due-today">vence hoje</span>';
+  else if(t.due) due = '<span class="chip due-ok">até '+fmtD(t.due)+'</span>';
+  else due = '<button class="chip due-none" data-ed="'+esc(t.id)+'">definir data</button>';
+
+  return '<div class="'+cls+'" data-id="'+esc(t.id)+'">'
+    + '<div class="trow-main">'
+    + '<select class="st-sel '+(t.status==='done'?'s-done':t.status==='in_progress'?'s-prog':'')+'" data-st="'+esc(t.id)+'" aria-label="Status">'
+      + ['pending','in_progress','done'].map(s=>'<option value="'+s+'"'+(t.status===s?' selected':'')+'>'+ST_LABEL[s]+'</option>').join('')
+    + '</select>'
+    + (t.jira ? '<a class="jkey" target="_blank" rel="noopener" href="https://anovatech.atlassian.net/browse/'+esc(t.jira)+'">'+esc(t.jira)+'</a>' : '<span class="jkey" style="border:none">novo</span>')
+    + (t.status!=='done' ? '<button class="star'+(t.priority?' on':'')+'" data-pr="'+esc(t.id)+'" title="'+(t.priority?'Remover prioridade':'Marcar como prioridade')+'" aria-label="Prioridade">★</button>' : '')
+    + (t.type==='Bug' ? '<span class="chip bug">BUG</span>' : '')
+    + '<span class="ttitle" data-x="'+esc(t.id)+'">'+esc(t.title)+'</span>'
+    + (t.statusLabel ? '<span class="chip slabel">'+esc(t.statusLabel)+'</span>' : '')
+    + (mode==='week' ? '<span class="chip">'+esc(projName(t.project))+'</span>' : '')
+    + (mode==='week' && oc==='entregue' ? '<span class="chip ok-w">✓ entregue</span>' : '')
+    + (mode==='week' && oc==='nao' ? '<span class="chip bad-w">✗ não entregue</span>' : '')
+    + (mode==='week' && oc==='aberto' ? '<span class="chip wait-w">⏳ a entregar</span>' : '')
+    + (t.subs && t.subs.length ? (function(){ const d=t.subs.filter(s=>s.status==='done').length; return '<button class="chip steps'+(d===t.subs.length?' full':'')+'" data-x="'+esc(t.id)+'">passos '+d+'/'+t.subs.length+'</button>'; })() : '')
+    + (t.impediment && t.status!=='done' ? '<span class="chip impd">IMPEDITIVO</span>' : '')
+    + (t.waitingOn && t.status!=='done' ? (function(){
+        const lc = lastCob(t), pr = promessa(t);
+        let s = '<span class="chip wait-ext">⏳ '+esc(t.waitingOn)+' · '+daysSince(t.waitingSince||todayISO())+'d</span>';
+        if(!lc) s += '<span class="chip semcob">sem cobrança</span>';
+        else s += '<span class="chip">cobrado '+fmtD(lc.date)+'</span>';
+        if(pr) s += '<span class="chip promessa'+(promessaVencida(t)?' vencida':'')+'">'+(promessaVencida(t)?'promessa vencida '+fmtD(pr):'prometido '+fmtD(pr))+'</span>';
+        return s; })() : '')
+    + (mode!=='week' && t.status!=='done' ? (t.week===w ? '<button class="chip wk" data-wk="'+esc(t.id)+'" title="Remover da semana">✓ semana</button>' : '<button class="chip wk-add" data-wk="'+esc(t.id)+'">+ semana</button>') : '')
+    + (mode==='week' && t.status!=='done' && t.week===w ? '<button class="chip wk" data-wk="'+esc(t.id)+'" title="Remover da semana">✓ semana</button>' : '')
+    + (t.owner ? '<span class="chip">'+esc(t.owner)+'</span>' : '<span class="chip" style="border-style:dashed;color:var(--stone)">sem gestor</span>')
+    + (reprog ? '<span class="chip reprog">↻ '+reprog+'x</span>' : '')
+    + due
+    + '<span class="t-actions">'
+      + (t.status!=='done' ? '<button class="ic-btn close-day" data-cl="'+esc(t.id)+'">'+(mode==='week'?'Bater':'Fechar')+'</button>' : '')
+      + '<a class="ic-btn" target="_blank" rel="noopener" href="'+gcalUrl(t)+'">Agendar</a>'
+      + '<button class="ic-btn" data-ed="'+esc(t.id)+'">Editar</button>'
+    + '</span>'
+    + '</div>'
+    + detail(t)
+    + '</div>';
+}
+
+function detail(t){
+  let h = '<div class="trow-detail">';
+  if(t.impediment && t.status!=='done'){
+    h += '<div class="d-block" style="border-color:var(--red-bd);background:var(--red-bg)"><h4 style="color:var(--red)">Impeditivo ativo · desde '+fmtD(t.impediment.date)+'</h4>'+esc(t.impediment.text)+' &nbsp;<button class="ic-btn" data-impres="'+esc(t.id)+'">Resolver</button></div>';
+  }
+  if(t.waitingOn && t.status!=='done'){
+    const cobs = t.cobrancas||[];
+    h += '<div class="d-block" style="border-style:dashed;border-color:var(--onyx)"><h4>Aguardando terceiro · '+esc(t.waitingOn)+' · desde '+fmtD(t.waitingSince||todayISO())+' ('+daysSince(t.waitingSince||todayISO())+' dias)</h4>';
+    if(!cobs.length){ h += '<div class="cob-line" style="color:var(--red)">Nenhuma cobrança registrada. Depende de terceiro há '+daysSince(t.waitingSince||todayISO())+' dias sem evidência de cobrança.</div>'; }
+    else {
+      h += '<div class="chain">';
+      cobs.forEach(c => {
+        h += '<div class="chain-ev"><div class="when">'+fmtD(c.date)+' · '+esc(c.channel||'sem canal')+(c.who?' · '+esc(c.who):'')
+          + '<span class="tag-r '+(c.responded?'sim':'nao')+'">'+(c.responded?'respondeu':'sem resposta')+'</span></div>'
+          + '<div class="said">'+(c.outcome ? '<b>Resultado:</b> '+esc(c.outcome) : '<i>sem retorno registrado</i>')
+          + (c.promisedDate ? ' · <b>prometeu resolver até '+fmtD(c.promisedDate)+'</b>' : '')
+          + '</div></div>';
+      });
+      h += '</div>';
+      if(promessaVencida(t)) h += '<div class="cob-line" style="color:var(--red);font-weight:600;margin-top:6px">Promessa vencida em '+fmtD(promessa(t))+'. Escalar para Bruno hoje.</div>';
+    }
+    h += '<div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap"><button class="ic-btn close-day" data-cob="'+esc(t.id)+'">+ Registrar cobrança</button><button class="ic-btn" data-waitres="'+esc(t.id)+'">Resolvido · liberar</button></div></div>';
+  }
+  if(t.notes) h += '<div class="d-block"><h4>Notas</h4>'+esc(t.notes)+'</div>';
+  if(t.subs && t.subs.length){
+    const dn = t.subs.filter(s=>s.status==='done').length;
+    h += '<div class="d-block"><h4>Passos executáveis · '+dn+'/'+t.subs.length+' concluídos</h4>';
+    t.subs.forEach((s,i) => {
+      const late = s.status!=='done' && s.due && s.due < todayISO();
+      h += '<div class="step s-'+(s.status==='done'?'done':s.status==='in_progress'?'prog':'todo')+(late?' late':'')+'" data-sp="'+esc(t.id)+'|'+i+'">'
+        + '<span class="bx">'+(s.status==='done'?'✓':'')+'</span>'
+        + (s.jira ? '<a class="jkey" target="_blank" rel="noopener" href="https://anovatech.atlassian.net/browse/'+esc(s.jira)+'" onclick="event.stopPropagation()">'+esc(s.jira)+'</a> ' : '')
+        + '<span class="stitle">'+esc(s.title)+'</span>'
+        + (s.owner?'<span class="sown">'+esc(s.owner)+'</span>':'')
+        + (s.due?'<span class="sdue">'+fmtD(s.due)+'</span>':'')
+        + '</div>';
+    });
+    h += '</div>';
+  }
+  if(t.closures && t.closures.length){
+    h += '<div class="d-block"><h4>Histórico de fechamento</h4>';
+    t.closures.forEach(c => {
+      if(c.executed) h += '<div class="cl-line">'+fmtD(c.date)+' · <span class="pos">executada</span> · tarefa concluída</div>';
+      else h += '<div class="cl-line">'+fmtD(c.date)+' · <span class="neg">não executada</span> · <b>motivo:</b> '+esc(c.reason)+' · <b>nova data:</b> '+fmtD(c.nextDue)+' · <b>impeditivo:</b> '+(c.impediment?esc(c.impedimentText||'sim'):'não')+'</div>';
+    });
+    h += '</div>';
+  }
+  if(h === '<div class="trow-detail">') h += '<div class="d-block" style="color:var(--stone)">Sem notas, subtarefas ou fechamentos registrados.</div>';
+  return h + '</div>';
+}
+
+function renderProjects(){
+  const vis = visibleTasks();
+  const byProj = {};
+  vis.forEach(t => (byProj[t.project] = byProj[t.project]||[]).push(t));
+  let h = '';
+  state.projects.forEach(p => {
+    if(filters.project!=='all' && filters.project!==p.id) return;
+    const all = projTasks(p.id);
+    const ts = (byProj[p.id]||[]).sort(sortTasks);
+    if(filters.project==='all' && !ts.length && (filters.status!=='all'||filters.gestor!=='all'||filters.q)) return;
+    const pct = projPct(p.id);
+    const done = all.filter(t=>t.status==='done').length;
+    const isOpen = openProj[p.id]===true || filters.project===p.id;
+    h += '<section class="proj'+(isOpen?' open':'')+'" data-proj="'+esc(p.id)+'">'
+      + '<div class="proj-head" data-toggle="'+esc(p.id)+'">'
+      + '<span class="caret">›</span>'
+      + (p.key?'<span class="proj-key">'+esc(p.key)+'</span>':'<span class="proj-key" style="border-style:dashed">local</span>')
+      + '<span class="proj-name">'+esc(p.name)+'</span>'
+      + '<span class="proj-meta"><span class="proj-counts">'+done+'/'+all.length+' concluídas'+(ts.length!==all.length?' · '+ts.length+' no filtro':'')+'</span>'
+      + '<span class="proj-bar"><i style="width:'+pct+'%"></i></span><span class="proj-pct">'+pct+'%</span></span>'
+      + '</div>'
+      + '<div class="proj-body">'
+      + (ts.length ? ts.map(t=>taskRow(t)).join('') : '<div class="empty-proj">Nenhuma tarefa neste filtro.</div>')
+      + '<div class="add-inline"><button class="ic-btn" data-add="'+esc(p.id)+'">+ Tarefa em '+esc(p.name)+'</button></div>'
+      + '</div></section>';
+  });
+  $('#projects').innerHTML = h || '<div class="empty-proj">Nenhum projeto.</div>';
+  bindRows();
+}
+
+function bindRows(){
+  document.querySelectorAll('[data-toggle]').forEach(el => el.addEventListener('click', ()=>{
+    const id = el.dataset.toggle;
+    openProj[id] = !el.parentElement.classList.contains('open');
+    el.parentElement.classList.toggle('open');
+  }));
+  document.querySelectorAll('[data-x]').forEach(el => el.addEventListener('click', ()=>{
+    expanded[el.dataset.x] = !expanded[el.dataset.x];
+    el.closest('.trow').classList.toggle('exp');
+  }));
+  document.querySelectorAll('[data-st]').forEach(el => el.addEventListener('change', ()=>{
+    const t = state.tasks.find(x=>x.id===el.dataset.st); if(!t) return;
+    t.status = el.value;
+    if(el.value==='done'){ t.doneDate = todayISO(); t.impediment=null; if(t.week) upsertWeekLog(t, t.week, {outcome:'entregue'}); }
+    else { t.doneDate = null; if(t.week){ t.weekLog=(t.weekLog||[]).filter(l=>!(l.week===t.week&&l.outcome==='entregue')); } }
+    save(); renderAll();
+  }));
+  document.querySelectorAll('[data-cl]').forEach(el => el.addEventListener('click', ()=> openClosure(el.dataset.cl)));
+  document.querySelectorAll('[data-ed]').forEach(el => el.addEventListener('click', ()=> openTaskForm(el.dataset.ed)));
+  document.querySelectorAll('[data-add]').forEach(el => el.addEventListener('click', ()=> openTaskForm(null, el.dataset.add)));
+  document.querySelectorAll('[data-wk]').forEach(el => el.addEventListener('click', ()=>{
+    const t = state.tasks.find(x=>x.id===el.dataset.wk); if(!t) return;
+    const w = filters.selectedWeek || currentWeek();
+    t.week = (t.week===w ? null : w);
+    save(); renderAll();
+  }));
+  document.querySelectorAll('[data-impres]').forEach(el => el.addEventListener('click', ()=>{
+    const t = state.tasks.find(x=>x.id===el.dataset.impres); if(!t) return;
+    t.impediment = null; save(); renderAll();
+  }));
+  document.querySelectorAll('[data-sp]').forEach(el => el.addEventListener('click', ()=>{
+    const [tid, ix] = el.dataset.sp.split('|');
+    const t = state.tasks.find(x=>x.id===tid); if(!t||!t.subs[ix]) return;
+    const cur = t.subs[ix].status;
+    t.subs[ix].status = cur==='pending' ? 'in_progress' : cur==='in_progress' ? 'done' : 'pending';
+    expanded[t.id] = true;
+    save(); renderAll();
+  }));
+  document.querySelectorAll('[data-pr]').forEach(el => el.addEventListener('click', ()=>{
+    const t = state.tasks.find(x=>x.id===el.dataset.pr); if(!t) return;
+    t.priority = !t.priority; save(); renderAll();
+  }));
+  document.querySelectorAll('[data-cob]').forEach(el => el.addEventListener('click', ()=> openCob(el.dataset.cob)));
+  document.querySelectorAll('[data-waitres]').forEach(el => el.addEventListener('click', ()=>{
+    const t = state.tasks.find(x=>x.id===el.dataset.waitres); if(!t) return;
+    t.waitingOn=null; t.waitingSince=null; save(); renderAll();
+  }));
+}
+
+function renderViewRow(){
+  $('#v-week').classList.toggle('on', filters.view==='week');
+  $('#v-proj').classList.toggle('on', filters.view==='proj');
+}
+function renderWeekSel(){
+  const w = filters.selectedWeek || currentWeek();
+  $('#wk-sel').innerHTML = collectWeeks().map(k =>
+    '<option value="'+k+'"'+(k===w?' selected':'')+'>Semana '+weekLabel(k)+(k===currentWeek()?' · atual':'')+'</option>').join('');
+}
+function weekFiltered(w){
+  const q = filters.q.trim().toLowerCase();
+  return weekTasks(w).filter(t => {
+    if(filters.gestor!=='all'){ if(filters.gestor==='__none' ? !!t.owner : t.owner!==filters.gestor) return false; }
+    if(q && !((t.title||'').toLowerCase().includes(q) || (t.jira||'').toLowerCase().includes(q))) return false;
+    return true;
+  });
+}
+function renderWeek(){
+  const w = filters.selectedWeek || currentWeek();
+  renderWeekSel();
+  const wt = weekFiltered(w);
+  const ent = wt.filter(t=>outcome(t,w)==='entregue').length;
+  const nao = wt.filter(t=>outcome(t,w)==='nao').length;
+  const ab  = wt.filter(t=>outcome(t,w)==='aberto').length;
+  const taxa = wt.length ? Math.floor(ent/wt.length*100) : 0;
+  let h = '';
+  const carry = state.tasks.filter(t=>t.week && t.week < currentWeek() && t.status!=='done');
+  if(w===currentWeek() && carry.length){
+    h += '<div class="banner">'+carry.length+' output'+(carry.length>1?'s':'')+' de semanas anteriores em aberto. <button class="ic-btn" id="btn-carry">Trazer para esta semana</button></div>';
+  }
+  h += '<div class="placar"><span><span class="big">'+ent+'/'+wt.length+'</span> <span class="pl">entregues</span></span><span class="sep">·</span><span><span class="big">'+taxa+'%</span> <span class="pl">taxa</span></span><span class="sep">·</span><span><span class="big">'+ab+'</span> <span class="pl">a entregar</span></span><span class="sep">·</span><span><span class="big">'+nao+'</span> <span class="pl">não entregues</span></span></div>';
+  if(!wt.length){
+    h += '<div class="week-empty"><p style="margin-bottom:12px">Nenhum output definido para a semana '+weekLabel(w)+'.</p><button class="btn btn-dark" id="btn-plan2">Definir outputs · segunda</button></div>';
+  } else {
+    const names = [...new Set(wt.map(t=>t.owner||'Sem gestor'))];
+    names.sort((x,y)=>{
+      const ix=CANON_ORDER.indexOf(x), iy=CANON_ORDER.indexOf(y);
+      if(ix!==-1||iy!==-1) return (ix===-1?99:ix)-(iy===-1?99:iy);
+      if(x==='Sem gestor') return 1; if(y==='Sem gestor') return -1;
+      return x.localeCompare(y);
+    });
+    const rank = t => { const o=outcome(t,w); const base = o==='aberto'?(flags(t).overdue?0:1):o==='nao'?2:3; return ((t.priority&&t.status!=='done')?0:10)+base; };
+    names.forEach(nm => {
+      const items = wt.filter(t=>(t.owner||'Sem gestor')===nm).sort((a2,b2)=>rank(a2)-rank(b2));
+      const e2 = items.filter(t=>outcome(t,w)==='entregue').length;
+      h += '<section class="person"><div class="person-head"><span class="person-name">'+esc(nm)+'</span><span class="person-score">'+e2+'/'+items.length+' entregues</span></div>'
+        + items.map(t=>taskRow(t,'week')).join('') + '</section>';
+    });
+  }
+  $('#projects').innerHTML = h;
+  bindRows();
+  const bc = $('#btn-carry'); if(bc) bc.addEventListener('click', ()=>{ carry.forEach(t=>t.week=currentWeek()); save(); renderAll(); });
+  const bp = $('#btn-plan2'); if(bp) bp.addEventListener('click', openPlan);
+}
+
+/* ── ritual de segunda ── */
+let planSel = new Set();
+function openPlan(){
+  const w = filters.selectedWeek || currentWeek();
+  planSel = new Set(state.tasks.filter(t=>t.week===w).map(t=>t.id));
+  $('#plan-sub').textContent = 'Semana '+weekLabel(w)+'. Marque o que entra como compromisso. Item sem data de conclusão deve ganhar data.';
+  $('#plan-g').innerHTML = '<option value="all">Todos os gestores</option>' + owners().map(o=>'<option value="'+esc(o)+'">'+esc(o)+'</option>').join('');
+  $('#plan-q').value='';
+  renderPlanList();
+  show('#ov-plan');
+}
+function renderPlanList(){
+  const q = $('#plan-q').value.trim().toLowerCase();
+  const g = $('#plan-g').value;
+  let h = '';
+  state.projects.forEach(p => {
+    const ts = state.tasks.filter(t => t.project===p.id && t.status!=='done')
+      .filter(t => g==='all' || t.owner===g)
+      .filter(t => !q || (t.title||'').toLowerCase().includes(q) || (t.jira||'').toLowerCase().includes(q));
+    if(!ts.length) return;
+    h += '<div class="plan-group">'+esc(p.name)+'</div>';
+    ts.forEach(t => {
+      h += '<label class="plan-item"><input type="checkbox" data-pk="'+esc(t.id)+'"'+(planSel.has(t.id)?' checked':'')+'><span class="jk">'+esc(t.jira||'novo')+'</span> '+esc(t.title)+(t.owner?' <span class="chip">'+esc(t.owner)+'</span>':'')+(t.due?' <span class="chip due-ok">até '+fmtD(t.due)+'</span>':' <span class="chip due-none" style="cursor:default">sem data</span>')+'</label>';
+    });
+  });
+  $('#plan-list').innerHTML = h || '<div class="empty-proj">Nenhuma tarefa aberta neste filtro.</div>';
+  document.querySelectorAll('#plan-list [data-pk]').forEach(cb => cb.addEventListener('change', ()=>{
+    if(cb.checked) planSel.add(cb.dataset.pk); else planSel.delete(cb.dataset.pk);
+  }));
+}
+$('#plan-q').addEventListener('input', renderPlanList);
+$('#plan-g').addEventListener('change', renderPlanList);
+$('#plan-save').addEventListener('click', ()=>{
+  const w = filters.selectedWeek || currentWeek();
+  state.tasks.forEach(t => {
+    if(planSel.has(t.id)) t.week = w;
+    else if(t.week===w) t.week = null;
+  });
+  save(); hide(); filters.view='week'; renderAll();
+});
+
+/* ── copiar resumos ── */
+function copyText(txt, btn){
+  const done = ()=>{ const o=btn.textContent; btn.textContent='Copiado ✓'; setTimeout(()=>btn.textContent=o, 1600); };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done)); }
+  else fallbackCopy(txt,done);
+}
+function fallbackCopy(txt,done){ const ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done(); }
+function groupByOwner(list){
+  const m = {};
+  list.forEach(t => (m[t.owner||'Sem gestor'] = m[t.owner||'Sem gestor']||[]).push(t));
+  return Object.keys(m).sort((x,y)=>{ const ix=CANON_ORDER.indexOf(x), iy=CANON_ORDER.indexOf(y); return (ix===-1?99:ix)-(iy===-1?99:iy) || x.localeCompare(y); }).map(k=>[k,m[k]]);
+}
+function textPlano(){
+  const w = filters.selectedWeek || currentWeek();
+  const wt = weekTasks(w).filter(t=>t.week===w);
+  let out = '📋 *OUTPUTS DA SEMANA · '+weekLabel(w)+'*\n';
+  groupByOwner(wt).forEach(([nm, items]) => {
+    out += '\n*'+nm+'* ('+items.length+')\n';
+    items.forEach(t => { out += '• '+(t.priority?'★ ':'')+(t.jira?t.jira+' — ':'')+t.title+(t.due?' · até '+fmtD(t.due):' · SEM DATA')+(t.waitingOn?' · ⏳ aguardando '+t.waitingOn:'')+'\n'; });
+  });
+  const sd = wt.filter(t=>!t.due && t.status!=='done').length;
+  if(sd) out += '\n⚠️ '+sd+' item(ns) sem data de conclusão — definir hoje.\n';
+  return out;
+}
+function textBatida(){
+  const w = filters.selectedWeek || currentWeek();
+  const wt = weekTasks(w);
+  const ent = wt.filter(t=>outcome(t,w)==='entregue').length;
+  const taxa = wt.length ? Math.floor(ent/wt.length*100) : 0;
+  let out = '✅ *BATIDA DA SEMANA · '+weekLabel(w)+'*\nEntrega: '+ent+'/'+wt.length+' ('+taxa+'%)\n';
+  groupByOwner(wt).forEach(([nm, items]) => {
+    const e2 = items.filter(t=>outcome(t,w)==='entregue').length;
+    out += '\n*'+nm+'* — '+e2+'/'+items.length+'\n';
+    items.forEach(t => {
+      const o = outcome(t,w);
+      const l = (t.weekLog||[]).find(x=>x.week===w);
+      if(o==='entregue') out += '✅ '+(t.priority?'★ ':'')+(t.jira?t.jira+' — ':'')+t.title+'\n';
+      else if(o==='nao') out += '❌ '+(t.jira?t.jira+' — ':'')+t.title+' · motivo: '+((l&&l.motivo)||'—')+((l&&l.nextDue)?' · nova data '+fmtD(l.nextDue):'')+((l&&l.imp)?' · impeditivo: '+(l.impTxt||'sim'):'')+'\n';
+      else out += '⏳ '+(t.jira?t.jira+' — ':'')+t.title+' · sem batida\n';
+    });
+  });
+  const imped = state.tasks.filter(t=>t.impediment && t.status!=='done');
+  if(imped.length){ out += '\n🔴 *Impeditivos ativos:*\n'; imped.forEach(t=>{ out += '• '+(t.jira?t.jira+' — ':'')+t.title+' ('+(t.owner||'sem gestor')+'): '+t.impediment.text+'\n'; }); }
+  const waits = state.tasks.filter(t=>t.waitingOn && t.status!=='done');
+  if(waits.length){ out += '\n⏳ *Aguardando terceiros:*\n'; waits.forEach(t=>{
+    const lc = lastCob(t), pr = promessa(t);
+    out += '• '+(t.jira?t.jira+' — ':'')+t.title+'\n   depende de: '+t.waitingOn+' ('+daysSince(t.waitingSince||todayISO())+'d)'
+      + '\n   cobrança: '+(lc ? fmtD(lc.date)+' via '+lc.channel+(lc.responded?' · respondeu: '+lc.outcome:' · SEM RESPOSTA') : 'NENHUMA REGISTRADA')
+      + (pr ? '\n   prometido até '+fmtD(pr)+(promessaVencida(t)?' · VENCIDO, escalar':'') : '')
+      + '\n'; }); }
+  return out;
+}
+
+function renderAll(){
+  renderStats(); renderViewRow(); renderGestor();
+  if(filters.view==='week'){
+    $('#proj-pills').style.display='none'; $('#status-tabs').style.display='none'; $('#week-bar').style.display='flex';
+    renderWeek();
+  } else {
+    $('#proj-pills').style.display='flex'; $('#status-tabs').style.display='flex'; $('#week-bar').style.display='none';
+    renderPills(); renderTabs(); renderProjects();
+  }
+  badge();
+}
+
+/* ── modals ── */
+function show(id){ $(id).classList.add('show'); }
+function hide(){ document.querySelectorAll('.overlay').forEach(o=>o.classList.remove('show')); }
+document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', hide));
+document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if(e.target===o) hide(); }));
+document.addEventListener('keydown', e => { if(e.key==='Escape') hide(); });
+
+function openTaskForm(id, projPreset){
+  editingId = id;
+  $('#mt-title').textContent = id ? 'Editar tarefa' : 'Nova tarefa';
+  const t = id ? state.tasks.find(x=>x.id===id) : null;
+  $('#t-title').value = t ? t.title : '';
+  $('#t-owner').value = t && t.owner ? t.owner : '';
+  $('#t-due').value = t && t.due ? t.due : '';
+  $('#t-notes').value = t ? (t.notes||'') : '';
+  $('#t-prio').checked = !!(t && t.priority);
+  $('#t-wait').value = t && t.waitingOn ? t.waitingOn : '';
+  $('#owners-dl').innerHTML = owners().map(o=>'<option value="'+esc(o)+'">').join('');
+  $('#t-proj').innerHTML = state.projects.map(p=>'<option value="'+esc(p.id)+'"'+((t?t.project:projPreset)===p.id?' selected':'')+'>'+esc(p.name)+'</option>').join('');
+  $('#t-err').style.display='none';
+  show('#ov-task');
+  $('#t-title').focus();
+}
+$('#t-save').addEventListener('click', ()=>{
+  const title=$('#t-title').value.trim(), ownerV=$('#t-owner').value.trim(), due=$('#t-due').value, proj=$('#t-proj').value, notes=$('#t-notes').value.trim();
+  const prio=$('#t-prio').checked, waitV=$('#t-wait').value.trim();
+  if(!title || !ownerV || !due){ $('#t-err').style.display='block'; return; }
+  if(editingId){
+    const t = state.tasks.find(x=>x.id===editingId);
+    Object.assign(t,{title, owner:ownerV, due, project:proj, notes, priority:prio});
+    if(waitV){ if(t.waitingOn!==waitV){ t.waitingOn=waitV; t.waitingSince=todayISO(); t.cobrancas=t.cobrancas||[]; } }
+    else { t.waitingOn=null; t.waitingSince=null; }
+  }else{
+    state.tasks.push({id:'t-'+Date.now(), jira:null, project:proj, title, type:'Tarefa', owner:ownerV, status:'pending', statusLabel:null, due, notes, closures:[], doneDate:null, subs:[], priority:prio, waitingOn:(waitV||null), waitingSince:(waitV?todayISO():null), cobrancas:[]});
+    openProj[proj]=true;
+  }
+  save(); hide(); renderAll();
+});
+
+function openClosure(id){
+  closingId = id;
+  const t = state.tasks.find(x=>x.id===id); if(!t) return;
+  $('#c-title').textContent = t.title;
+  $('#c-sub').textContent = (t.jira?t.jira+' · ':'') + (t.owner||'sem gestor') + (t.due?' · prazo '+fmtD(t.due):' · sem data definida');
+  $('#c-step1').style.display='block'; $('#c-step2').style.display='none';
+  $('#c-reason').value=''; $('#c-next').value=''; $('#c-imp').checked=false; $('#c-imp-txt').style.display='none'; $('#c-imp-txt').value=''; $('#c-err').style.display='none';
+  show('#ov-close');
+}
+$('#c-yes').addEventListener('click', ()=>{
+  const t = state.tasks.find(x=>x.id===closingId); if(!t) return;
+  t.status='done'; t.doneDate=todayISO(); t.impediment=null;
+  (t.closures=t.closures||[]).push({date:todayISO(), executed:true});
+  if(t.week) upsertWeekLog(t, t.week, {outcome:'entregue'});
+  save(); hide(); renderAll();
+});
+$('#c-no').addEventListener('click', ()=>{ $('#c-step1').style.display='none'; $('#c-step2').style.display='block'; $('#c-reason').focus(); });
+$('#c-imp').addEventListener('change', e => { $('#c-imp-txt').style.display = e.target.checked ? 'block':'none'; });
+$('#c-save').addEventListener('click', ()=>{
+  const t = state.tasks.find(x=>x.id===closingId); if(!t) return;
+  const reason=$('#c-reason').value.trim(), next=$('#c-next').value, imp=$('#c-imp').checked, impTxt=$('#c-imp-txt').value.trim();
+  if(!reason || !next || (imp && !impTxt)){ $('#c-err').style.display='block'; return; }
+  (t.closures=t.closures||[]).push({date:todayISO(), executed:false, reason, nextDue:next, impediment:imp, impedimentText:impTxt});
+  t.due = next;
+  if(t.status==='pending') t.status='in_progress';
+  t.impediment = imp ? {text:(impTxt||'sim'), date:todayISO()} : null;
+  if(t.week) upsertWeekLog(t, t.week, {outcome:'nao', motivo:reason, nextDue:next, imp:imp, impTxt:impTxt});
+  save(); hide(); renderAll();
+});
+
+$('#btn-new-task').addEventListener('click', ()=> openTaskForm(null, filters.project!=='all'?filters.project:state.projects[0].id));
+$('#btn-new-proj').addEventListener('click', ()=>{ $('#p-name').value=''; $('#p-key').value=''; $('#p-err').style.display='none'; show('#ov-proj'); $('#p-name').focus(); });
+$('#p-save').addEventListener('click', ()=>{
+  const name=$('#p-name').value.trim(), key=$('#p-key').value.trim().toUpperCase();
+  if(!name){ $('#p-err').style.display='block'; return; }
+  const id = key || ('p-'+Date.now());
+  state.projects.push({id, key: key||null, name, status:'in_progress'});
+  openProj[id]=true;
+  save(); hide(); renderAll();
+});
+let cobId = null;
+function openCob(id){
+  cobId = id;
+  const t = state.tasks.find(x=>x.id===id); if(!t) return;
+  $('#cb-title').textContent = t.title;
+  $('#cb-sub').textContent = 'Aguardando ' + (t.waitingOn||'terceiro') + ' há ' + daysSince(t.waitingSince||todayISO()) + ' dias · ' + ((t.cobrancas||[]).length) + ' cobrança(s) registrada(s)';
+  $('#cb-canal').value='WhatsApp'; $('#cb-who').value=''; $('#cb-resp').checked=false;
+  $('#cb-out').value=''; $('#cb-prom').value=''; $('#cb-err').style.display='none';
+  show('#ov-cob'); $('#cb-who').focus();
+}
+$('#cb-save').addEventListener('click', ()=>{
+  const t = state.tasks.find(x=>x.id===cobId); if(!t) return;
+  const canal=$('#cb-canal').value, who=$('#cb-who').value.trim(), resp=$('#cb-resp').checked;
+  const out=$('#cb-out').value.trim(), prom=$('#cb-prom').value;
+  if(!canal || !out || (resp && !prom)){ $('#cb-err').style.display='block'; return; }
+  (t.cobrancas=t.cobrancas||[]).push({date:todayISO(), channel:canal, who:who, responded:resp, outcome:out, promisedDate:(prom||null)});
+  expanded[t.id]=true; save(); hide(); renderAll();
+});
+$('#btn-reset').addEventListener('click', ()=> show('#ov-reset'));
+$('#v-week').addEventListener('click', ()=>{ filters.view='week'; renderAll(); });
+$('#v-proj').addEventListener('click', ()=>{ filters.view='proj'; renderAll(); });
+$('#wk-sel').addEventListener('change', e => { filters.selectedWeek = e.target.value; renderAll(); });
+$('#btn-plan').addEventListener('click', openPlan);
+$('#btn-copy-plan').addEventListener('click', e => copyText(textPlano(), e.target));
+$('#btn-copy-close').addEventListener('click', e => copyText(textBatida(), e.target));
+$('#reset-go').addEventListener('click', ()=>{ state = clone(SEED); expanded={}; save(); hide(); renderAll(); });
+$('#f-gestor').addEventListener('change', e => { filters.gestor = e.target.value; renderAll(); });
+$('#f-q').addEventListener('input', e => { filters.q = e.target.value; filters.view==='week' ? renderWeek() : renderProjects(); });
+
+/* ── boot ── */
+(async function(){
+  await loadState();
+  filters.selectedWeek = currentWeek();
+  state.projects.forEach((p,i) => { if(openProj[p.id]===undefined) openProj[p.id] = false; });
+  const withOverdue = state.projects.find(p => projTasks(p.id).some(t => flags(t).overdue));
+  const first = withOverdue || state.projects.find(p => projPct(p.id) < 100 && projTasks(p.id).length);
+  if(first) openProj[first.id] = true;
+  renderAll();
+})();
+</script>
 </body>
 </html>
